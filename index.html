@@ -3,46 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammed Shubair - Resume</title>
+    <title>Mohammed Shubair - IT Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <div class="resume-wrapper">
-        <header class="main-header">
+        <header class="main-header" data-aos="fade-down">
             <div class="profile-circle">MS</div>
             <div class="header-text">
                 <h1 class="name">MOHAMMED <span class="highlight">SHUBAIR</span></h1>
                 <p class="role">IT Specialist and Network Administrator</p>
-                <a href="Resume-Mohammed-Shubair.pdf" download class="download-btn">
-                    <i class="fas fa-file-pdf"></i> Download PDF Version
-                </a>
+                <div class="header-actions">
+                    <a href="Resume-Mohammed-Shubair.pdf" download class="download-btn">
+                        <i class="fas fa-file-pdf"></i> Download PDF Version
+                    </a>
+                </div>
                 <div class="contact-bar">
                     <div class="info-box"><strong>LOCATION</strong><span>Saudi Arabia</span></div>
-                    <div class="info-box"><strong>Nationality</strong><span>Palestine</span></div>
+                    <div class="info-box"><strong>NATIONALITY</strong><span>Palestine</span></div>
                     <div class="info-box"><strong>PHONE</strong><span>966562500063</span></div>
                     <div class="info-box"><strong>EMAIL</strong><span>mshubair@outlook.com</span></div>
                 </div>
             </div>
         </header>
 
-        <section class="main-row">
+        <section class="main-row" data-aos="fade-up">
             <div class="side-label">
                 <h2>INTRO</h2>
                 <p>Personal Profile</p>
             </div>
             <div class="main-content">
-                <p><strong>IT Specialist & Network Administrator</strong> with 12+ years of experience in securing 
-                   enterprise networks and streamlining IT operations across healthcare and hospitality sectors. 
-                   Expert in <strong>Active Directory, Firewall management</strong>, and <strong>CCNA/MCSA certified</strong>. Proven track record of improving system uptime to <strong>99.9%</strong> and leading technical support teams to enhance infrastructure reliability and security.
-                </p>
+                <p><strong>IT Specialist & Network Administrator</strong> with 12+ years of experience in securing enterprise networks and streamlining IT operations across healthcare and hospitality sectors. Expert in <strong>Active Directory, Firewall management</strong>, and <strong>CCNA/MCSA certified</strong>. Proven track record of improving system uptime to <strong>99.9%</strong> and leading technical support teams to enhance infrastructure reliability and security.</p>
             </div>
         </section>
 
-        <section class="main-row">
+        <section class="main-row" data-aos="fade-up">
             <div class="side-label">
                 <h2>PORTFOLIO</h2>
-                <p>Credentials</p>
+                <p>Credentials & Badges</p>
             </div>
             <div class="main-content">
                 <div class="cover-letter-card">
@@ -58,37 +58,29 @@
                 </div>
 
                 <div class="cert-grid">
-                    <div class="cert-item">
-                        <i class="fas fa-certificate"></i>
-                        <span>MCSA Windows Server<br><small>Networkat Institute</small></span>
-                        <a href="MCSA-Certificate.pdf" download class="cert-mini-btn">
-                            <i class="fas fa-download"></i> Get Copy
-                        </a>
+                    <div class="cert-item badge-style">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png" alt="MCSA" class="cert-logo">
+                        <span>MCSA Windows Server</span>
+                        <a href="MCSA-Certificate.pdf" target="_blank" class="cert-mini-btn">Verify Credential</a>
                     </div>
-
-                    <div class="cert-item">
-                        <i class="fas fa-network-wired"></i>
-                        <span>CCNA 200-301<br><small>Udemy Certified</small></span>
-                        <a href="CCNA-Certificate.pdf" download class="cert-mini-btn">
-                            <i class="fas fa-download"></i> Get Copy
-                        </a>
+                    <div class="cert-item badge-style">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Cisco_logo.svg/1280px-Cisco_logo.svg.png" alt="CCNA" class="cert-logo">
+                        <span>CCNA 200-301</span>
+                        <a href="CCNA-Certificate.pdf" target="_blank" class="cert-mini-btn">Verify Credential</a>
                     </div>
-
-                    <div class="cert-item">
-                        <i class="fas fa-id-card"></i>
-                        <span>Professional License<br><small>الرخصة المهنية</small></span>
-                        <a href="Saudi-License.pdf" download class="cert-mini-btn">
-                            <i class="fas fa-download"></i> Get Copy
-                        </a>
+                    <div class="cert-item badge-style">
+                        <i class="fas fa-id-badge fa-3x" style="color: var(--gold); margin-bottom: 10px;"></i>
+                        <span>Saudi Professional License</span>
+                        <a href="Saudi-License.pdf" target="_blank" class="cert-mini-btn">View License</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="main-row">
+        <section class="main-row" data-aos="fade-up">
             <div class="side-label">
-                <h2>OFFICIAL DOCUMENTS</h2>
-                <p>Verified Credentials</p>
+                <h2>DOCUMENTS</h2>
+                <p>Verified Records</p>
             </div>
             <div class="main-content">
                 <div class="doc-download-box">
@@ -100,15 +92,11 @@
                         <span><strong>Diploma Computer Network Technology</strong> - Jeddah International Institute</span>
                         <a href="Diploma-Network.pdf" download class="mini-download-btn"><i class="fas fa-download"></i> Get Copy</a>
                     </div>
-                    <div class="doc-item">
-                        <span><strong>Professional Saudi License</strong> - Engineering/Technical</span>
-                        <a href="Saudi-License.pdf" download class="mini-download-btn"><i class="fas fa-download"></i> Get Copy</a>
-                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="main-row">
+        <section class="main-row" data-aos="fade-up">
             <div class="side-label">
                 <h2>EXPERIENCE</h2>
                 <p>Work History</p>
@@ -122,8 +110,6 @@
                         <li>Monitored and resolved Microsoft Exchange issues, ensuring seamless email services for 1000+ users</li>
                         <li>Automated workflows saving 20+ hours of manual work weekly</li>
                         <li>Resolved 95% of Helpdesk tickets within SLA</li>
-                        <li>Developed and delivered staff training programs, reducing basic IT support queries by 30%</li>
-                        <li>Collaborated with technical teams to resolve complex system issues, minimizing downtime</li>
                     </ul>
                 </div>
 
@@ -132,48 +118,24 @@
                     <span class="period">May 2016 - June 2021</span>
                     <ul>
                         <li>Achieved 99.9% uptime and improved network performance</li>
-                        <li>Installed and supported inpatient management software, streamlining patient data handling and reporting</li>
-                        <li>Enhanced performance and boosted efficiency in current applications</li>
+                        <li>Installed and supported inpatient management software, streamlining patient data handling</li>
                     </ul>
                 </div>
 
-                 <div class="experience-block">
+                <div class="experience-block">
                     <h3>IT SYSTEM ADMINISTRATOR | Casablanca Hotel - Royal</h3>
                     <span class="period">Jan 2015 - May 2016</span>
                     <ul>
                         <li>Managed installation of 20 new CCTV systems, fingerprint access, and Wi-Fi Access points</li>
                         <li>Support for Opera and Sun system (Check-in/out, Accounting, Restaurant)</li>
-                        <li>Performed Network Troubleshooting and Management</li>
                     </ul>
                 </div>
-
-                <div class="experience-block">
-                    <h3>IT SYSTEM ADMINISTRATOR | Casablanca Hotel</h3>
-                    <span class="period">June 2014 – December 2014</span>
-                    <ul>
-                        <li>Led branch integrations, achieving a 90% reduction in technical malfunctions</li>
-                        <li>Secured network infrastructure against breaches while optimizing performance</li>
-                        <li>Implemented a structured SLA-based ticketing system across all Casablanca Hotels Group</li>
-                    </ul>
-                </div>
-
-                <div class="experience-block">
-                    <h3>TECHNICAL SUPPORT | Alhaddad Telecom Co. LTD</h3>
-                    <span class="period">April 2008 - June 2012</span>
-                    <ul>
-                        <li>Assisted with troubleshooting hardware and software issues</li>
-                        <li>Communicate customer feedback to the appropriate internal team members</li>
-                        <li>Implementation of upgrade software releases</li>
-                        <li>Troubleshot hardware and software issues and PC problems</li>
-                    </ul>
-                </div>
-
             </div>
         </section>
 
-        <section class="main-row">
+        <section class="main-row" data-aos="fade-up">
             <div class="side-label">
-                <h2>TECHNICAL SKILLS</h2>
+                <h2>SKILLS</h2>
                 <p>Expertise Matrix</p>
             </div>
             <div class="main-content">
@@ -187,39 +149,22 @@
                     <tbody>
                         <tr>
                             <td><strong>Networking</strong></td>
-                            <td>Configuration and Management of Network Devices (Switch, Router), TCP/IP, Troubleshooting.</td>
+                            <td>Configuration (Switch, Router), TCP/IP, Troubleshooting.</td>
                         </tr>
                         <tr>
                             <td><strong>Windows Server</strong></td>
-                            <td>Active Directory (Domain Control), Group Policy Management, DNS and DHCP Configuration, Microsoft Exchange monitoring and resolution.</td>
+                            <td>Active Directory, Group Policy, DNS/DHCP, MS Exchange.</td>
                         </tr>
-
                         <tr>
-                            <td><strong>Virtualization</strong></td>
-                            <td>Veeam Backup Configuration, Troubleshooting Operating Systems (Windows 10/11), Help Desk Management, Software Installation and Support</td>
+                            <td><strong>Security</strong></td>
+                            <td>FortiGate, Sophos, Mikrotik, Firewall Configuration.</td>
                         </tr>
-
-                        <tr>
-                            <td><strong>Hospitality</strong></td>
-                            <td>Support for Opera and Sun System (Check-in/out, Accounting, Restaurant)</td>
-                        </tr>
-
-                        <tr>
-                            <td><strong>Backup & Support</strong></td>
-                            <td>Veeam Backup Configuration, Troubleshooting Operating systems (Windows10-11), Helpdesk Management, Software installation and Support</td>
-                        </tr>
-
-                        <tr>
-                            <td><strong>Security/Firewall</strong></td>
-                            <td>FortiGate, Sophos, Mikrotik, Basic Firewall Configuration</td>
-                        </tr>
-
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <section class="main-row no-border">
+        <section class="main-row no-border" data-aos="fade-up">
             <div class="side-label">
                 <h2>EDUCATION</h2>
             </div>
@@ -230,18 +175,26 @@
         </section>
     </div>
 
+    <div class="quick-contact-bar">
+        <a href="tel:966562500063" class="q-btn call"><i class="fas fa-phone"></i> Call Now</a>
+        <a href="https://wa.me/966562500063" class="q-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-    function toggleCoverLetter() {
-        var content = document.getElementById("full-cover-letter");
-        var btn = document.getElementById("toggleBtn");
-        if (content.style.display === "none") {
-            content.style.display = "block";
-            btn.innerHTML = "Show Less";
-        } else {
-            content.style.display = "none";
-            btn.innerHTML = "Show Full Letter";
+        AOS.init({ duration: 1000, once: true });
+
+        function toggleCoverLetter() {
+            var content = document.getElementById("full-cover-letter");
+            var btn = document.getElementById("toggleBtn");
+            if (content.style.display === "none") {
+                content.style.display = "block";
+                btn.innerHTML = "Show Less";
+            } else {
+                content.style.display = "none";
+                btn.innerHTML = "Show Full Letter";
+            }
         }
-    }
     </script>
 </body>
 </html>
