@@ -8,16 +8,65 @@
 
 * { box-sizing: border-box; }
 
-body { font-family: 'Segoe UI', Arial, sans-serif; background: #ddd; padding: 50px 0; line-height: 1.6; color: var(--dark); }
+body { 
+    font-family: 'Segoe UI', Arial, sans-serif; 
+    background: #ddd; 
+    padding: 50px 0; 
+    line-height: 1.6; 
+    color: var(--dark); 
+}
 
-.resume-wrapper { max-width: 950px; margin: auto; background: white; padding: 60px; min-height: 1000px; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+.resume-wrapper { 
+    max-width: 950px; 
+    margin: auto; 
+    background: white; 
+    padding: 60px; 
+    min-height: 1000px; 
+    box-shadow: 0 0 20px rgba(0,0,0,0.1); 
+}
 
 /* Header */
 .main-header { display: flex; align-items: center; margin-bottom: 70px; }
-.profile-circle { width: 130px; height: 130px; background: var(--dark); border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin-right: 40px; }
+.profile-circle { 
+    width: 130px; 
+    height: 130px; 
+    background: var(--dark); 
+    border-radius: 50%; 
+    color: white; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 2.5rem; 
+    margin-right: 40px; 
+}
 .name { font-size: 2.8rem; margin: 0; letter-spacing: 2px; }
 .highlight { color: var(--gold); }
-.role { font-size: 1.1rem; color: var(--gray); margin: 5px 0 25px 0; }
+.role { font-size: 1.1rem; color: var(--gray); margin: 5px 0 15px 0; }
+
+/* تصميم زر تحميل الـ PDF الموحد الجديد */
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    padding: 10px 25px;
+    background-color: var(--gold);
+    color: #000 !important;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--gold);
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background-color: transparent;
+    color: var(--gold) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 196, 0, 0.3);
+}
 
 .contact-bar { display: flex; gap: 40px; border-top: 1px solid var(--line); padding-top: 15px; }
 .info-box strong { display: block; font-size: 0.75rem; letter-spacing: 1px; }
@@ -46,26 +95,21 @@ li { margin-bottom: 6px; font-size: 0.95rem; }
 .skills-table td strong { color: #000; font-size: 0.85rem; }
 
 /* -------------------------------------------
-   RESPONSIVE DESIGN (الجوال والتابلت)
+   RESPONSIVE DESIGN
 ------------------------------------------- */
 
-/* للأجهزة اللوحية (Tablets) */
 @media (max-width: 850px) {
     .resume-wrapper { padding: 40px; margin: 10px; }
     .side-label { flex: 0 0 140px; }
     .main-content { padding-left: 25px; }
 }
 
-/* للهواتف المحمولة (Phones) */
 @media (max-width: 768px) {
     body { padding: 0; }
     .resume-wrapper { padding: 30px 20px; border-radius: 0; }
-    
     .main-header { flex-direction: column; text-align: center; }
     .profile-circle { margin-right: 0; margin-bottom: 20px; }
-    
     .contact-bar { justify-content: center; text-align: center; gap: 15px; }
-    
     .main-row { flex-direction: column; margin-bottom: 30px; }
     .side-label { 
         flex: 0 0 auto; 
@@ -74,75 +118,28 @@ li { margin-bottom: 6px; font-size: 0.95rem; }
         padding-bottom: 5px;
         width: 100%;
     }
-    
-    .main-content { 
-        padding-left: 0; 
-        border-left: none; 
-    }
-    
+    .main-content { padding-left: 0; border-left: none; }
     .name { font-size: 2rem; }
-    
-    /* تحويل الجدول إلى كروت سهلة القراءة في الجوال */
     .skills-table thead { display: none; }
     .skills-table tr { display: block; margin-bottom: 20px; border: 1px solid var(--line); padding: 10px; background: #fafafa; }
     .skills-table td { display: block; width: 100%; border: none; padding: 5px 0; }
     .skills-table td strong { color: var(--gold); display: block; margin-bottom: 5px; }
-
 }
 
-/* تحسين ظهور بيانات الاتصال في الجوال */
 @media (max-width: 480px) {
     .contact-bar {
         display: grid !important;
-        grid-template-columns: 1fr 1fr; /* تقسيم العناصر لعمودين */
+        grid-template-columns: 1fr 1fr;
         gap: 15px;
         text-align: left;
     }
-    
     .info-box span {
         display: block;
         word-wrap: break-word;
         font-size: 0.8rem;
     }
-}
-
-/* تصميم زر تحميل الـ PDF */
-.download-btn {
-    display: inline-flex;
-    align-items: center;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: var(--gold);
-    color: #000 !important; /* لون النص أسود ليتباين مع الذهبي */
-    text-decoration: none;
-    border-radius: 30px; /* زوايا دائرية لشكل عصري */
-    font-weight: bold;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    border: 2px solid var(--gold);
-}
-
-.download-btn:hover {
-    background-color: transparent;
-    color: var(--gold) !important;
-    transform: translateY(-3px); /* حركة بسيطة عند مرور الماوس */
-}
-
-/* لضمان مظهر جيد في الجوال */
-@media screen and (max-width: 480px) {
     .download-btn {
-        width: 80%;
+        width: 100%;
         justify-content: center;
     }
-}
-
-.download-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #ffcc00; /* اللون الذهبي */
-    color: black !important;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-bottom: 20px;
 }
