@@ -129,30 +129,53 @@ li { margin-bottom: 6px; font-size: 0.95rem; }
 .cert-item span { font-size: 0.75rem; font-weight: bold; line-height: 1.2; display: block; }
 .cert-item small { color: #ccc; font-weight: normal; font-size: 0.65rem; }
 
-/* NEW: Style for Get Copy buttons in Certificates */
+/* NEW: Style for Badge-style Certificates with Logos */
+.badge-style {
+    background: #fff !important; /* خلفية بيضاء لتبرز الشعارات */
+    color: var(--dark) !important;
+    border: 1px solid #eee !important;
+    padding: 20px !important;
+}
+
+.cert-logo {
+    width: 60px;
+    height: auto;
+    margin-bottom: 15px;
+    filter: grayscale(100%);
+    transition: 0.3s;
+}
+
+.cert-item:hover .cert-logo {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+/* NEW: Updated Style for Get Copy/Verify buttons in Certificates */
 .cert-mini-btn {
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    margin-top: 10px;
-    padding: 4px 10px;
-    background-color: rgba(255, 196, 0, 0.1);
+    margin-top: auto; /* دفع الزر للأسفل */
+    padding: 6px 12px;
+    background-color: var(--dark) !important;
     color: var(--gold) !important;
     text-decoration: none;
-    font-size: 0.65rem;
+    font-size: 0.7rem;
     font-weight: bold;
-    border: 1px solid var(--gold);
+    border: none !important;
     border-radius: 4px;
     transition: all 0.3s ease;
+    width: 100%;
+    justify-content: center;
 }
 
 .cert-mini-btn:hover {
-    background-color: var(--gold);
+    background-color: var(--gold) !important;
     color: var(--dark) !important;
 }
 
 .cert-mini-btn i {
-    font-size: 0.7rem !important;
+    font-size: 0.75rem !important;
     margin-bottom: 0 !important;
     color: inherit !important;
 }
@@ -187,6 +210,33 @@ li { margin-bottom: 6px; font-size: 0.95rem; }
     border-color: var(--gold);
 }
 
+/* Quick Contact Bar (Sticky Footer for Mobile) */
+.quick-contact-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: none; /* Hidden on Desktop */
+    grid-template-columns: 1fr 1fr;
+    z-index: 999;
+}
+
+.q-btn {
+    padding: 15px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.call { background: var(--dark); }
+.whatsapp { background: #25D366; }
+
 /* Responsive Design Section */
 @media (max-width: 850px) {
     .resume-wrapper { padding: 40px; margin: 10px; }
@@ -195,7 +245,7 @@ li { margin-bottom: 6px; font-size: 0.95rem; }
 }
 
 @media (max-width: 768px) {
-    body { padding: 0; }
+    body { padding: 0; padding-bottom: 60px; } /* مساحة للأزرار المثبتة بالأسفل */
     .resume-wrapper { padding: 30px 20px; border-radius: 0; }
     .main-header { flex-direction: column; text-align: center; }
     .profile-circle { margin-right: 0; margin-bottom: 20px; }
@@ -210,6 +260,10 @@ li { margin-bottom: 6px; font-size: 0.95rem; }
     }
     .main-content { padding-left: 0; border-left: none; }
     .name { font-size: 2rem; }
+    
+    /* Show Quick Contact Bar on Mobile */
+    .quick-contact-bar { display: grid; }
+    
     .skills-table thead { display: none; }
     .skills-table tr { display: block; margin-bottom: 20px; border: 1px solid var(--line); padding: 10px; background: #fafafa; }
     .skills-table td { display: block; width: 100%; border: none; padding: 5px 0; }
