@@ -105,3 +105,33 @@ li { margin-bottom: 6px; font-size: 0.95rem; }
         font-size: 0.8rem;
     }
 }
+
+/* تصميم زر تحميل الـ PDF */
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: var(--gold);
+    color: #000 !important; /* لون النص أسود ليتباين مع الذهبي */
+    text-decoration: none;
+    border-radius: 30px; /* زوايا دائرية لشكل عصري */
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--gold);
+}
+
+.download-btn:hover {
+    background-color: transparent;
+    color: var(--gold) !important;
+    transform: translateY(-3px); /* حركة بسيطة عند مرور الماوس */
+}
+
+/* لضمان مظهر جيد في الجوال */
+@media screen and (max-width: 480px) {
+    .download-btn {
+        width: 80%;
+        justify-content: center;
+    }
+}
