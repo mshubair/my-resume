@@ -135,3 +135,14 @@ li { margin-bottom: 6px; font-size: 0.95rem; }
         justify-content: center;
     }
 }
+
+.download-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffcc00; /* اللون الذهبي */
+    color: black !important;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
