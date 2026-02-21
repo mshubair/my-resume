@@ -87,4 +87,21 @@ li { margin-bottom: 6px; font-size: 0.95rem; }
     .skills-table tr { display: block; margin-bottom: 20px; border: 1px solid var(--line); padding: 10px; background: #fafafa; }
     .skills-table td { display: block; width: 100%; border: none; padding: 5px 0; }
     .skills-table td strong { color: var(--gold); display: block; margin-bottom: 5px; }
+
+}
+
+/* تحسين ظهور بيانات الاتصال في الجوال */
+@media (max-width: 480px) {
+    .contact-bar {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr; /* تقسيم العناصر لعمودين */
+        gap: 15px;
+        text-align: left;
+    }
+    
+    .info-box span {
+        display: block;
+        word-wrap: break-word;
+        font-size: 0.8rem;
+    }
 }
