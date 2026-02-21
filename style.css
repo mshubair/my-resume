@@ -1,0 +1,90 @@
+:root {
+    --gold: #FFC400;
+    --dark: #222;
+    --gray: #777;
+    --light-bg: #f9f9f9;
+    --line: #eeeeee;
+}
+
+* { box-sizing: border-box; }
+
+body { font-family: 'Segoe UI', Arial, sans-serif; background: #ddd; padding: 50px 0; line-height: 1.6; color: var(--dark); }
+
+.resume-wrapper { max-width: 950px; margin: auto; background: white; padding: 60px; min-height: 1000px; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+
+/* Header */
+.main-header { display: flex; align-items: center; margin-bottom: 70px; }
+.profile-circle { width: 130px; height: 130px; background: var(--dark); border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin-right: 40px; }
+.name { font-size: 2.8rem; margin: 0; letter-spacing: 2px; }
+.highlight { color: var(--gold); }
+.role { font-size: 1.1rem; color: var(--gray); margin: 5px 0 25px 0; }
+
+.contact-bar { display: flex; gap: 40px; border-top: 1px solid var(--line); padding-top: 15px; }
+.info-box strong { display: block; font-size: 0.75rem; letter-spacing: 1px; }
+.info-box span { font-size: 0.9rem; color: var(--gray); }
+
+/* Layout Grid */
+.main-row { display: flex; margin-bottom: 40px; }
+.side-label { flex: 0 0 180px; }
+.side-label h2 { font-size: 1.1rem; margin: 0; letter-spacing: 2px; }
+.side-label p { font-size: 0.75rem; color: var(--gray); margin: 3px 0; }
+
+.main-content { flex: 1; padding-left: 40px; border-left: 1px solid var(--line); }
+.no-border .main-content { border-left: none; }
+
+/* Content Details */
+.experience-block { margin-bottom: 30px; }
+.experience-block h3 { font-size: 1.05rem; margin: 0; }
+.period { color: var(--gold); font-size: 0.85rem; font-weight: bold; }
+ul { padding-left: 20px; margin-top: 10px; }
+li { margin-bottom: 6px; font-size: 0.95rem; }
+
+/* Technical Skills Table Styling */
+.skills-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9rem; }
+.skills-table th { text-align: left; background: #f8f8f8; padding: 10px; border-bottom: 2px solid var(--gold); text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem; }
+.skills-table td { padding: 12px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.skills-table td strong { color: #000; font-size: 0.85rem; }
+
+/* -------------------------------------------
+   RESPONSIVE DESIGN (الجوال والتابلت)
+------------------------------------------- */
+
+/* للأجهزة اللوحية (Tablets) */
+@media (max-width: 850px) {
+    .resume-wrapper { padding: 40px; margin: 10px; }
+    .side-label { flex: 0 0 140px; }
+    .main-content { padding-left: 25px; }
+}
+
+/* للهواتف المحمولة (Phones) */
+@media (max-width: 768px) {
+    body { padding: 0; }
+    .resume-wrapper { padding: 30px 20px; border-radius: 0; }
+    
+    .main-header { flex-direction: column; text-align: center; }
+    .profile-circle { margin-right: 0; margin-bottom: 20px; }
+    
+    .contact-bar { justify-content: center; text-align: center; gap: 15px; }
+    
+    .main-row { flex-direction: column; margin-bottom: 30px; }
+    .side-label { 
+        flex: 0 0 auto; 
+        margin-bottom: 10px; 
+        border-bottom: 2px solid var(--gold);
+        padding-bottom: 5px;
+        width: 100%;
+    }
+    
+    .main-content { 
+        padding-left: 0; 
+        border-left: none; 
+    }
+    
+    .name { font-size: 2rem; }
+    
+    /* تحويل الجدول إلى كروت سهلة القراءة في الجوال */
+    .skills-table thead { display: none; }
+    .skills-table tr { display: block; margin-bottom: 20px; border: 1px solid var(--line); padding: 10px; background: #fafafa; }
+    .skills-table td { display: block; width: 100%; border: none; padding: 5px 0; }
+    .skills-table td strong { color: var(--gold); display: block; margin-bottom: 5px; }
+}
