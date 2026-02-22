@@ -149,81 +149,13 @@ body {
 /* ====================================================== */
 /* الحــــل النهـــــائي والمطــــور للجــــوال (768px) */
 /* ====================================================== */
-@media screen and (max-width: 768px) {
-    
-    body { padding: 0 !important; }
-
-    .resume-wrapper { 
-        margin: 0 !important; 
-        padding: 20px !important; 
-        width: 100% !important; 
-        min-height: auto !important;
-        box-shadow: none !important;
-    }
-
-    /* هيدر الجوال */
-    .main-header { 
-        flex-direction: column !important; 
-        text-align: center !important; 
-        margin-bottom: 40px !important;
-    }
-
-    .profile-circle { 
-        margin-right: 0 !important; 
-        margin-bottom: 20px !important; 
-        width: 100px !important; 
-        height: 100px !important; 
-    }
-
-    .name { font-size: 2rem !important; }
-
-    .contact-bar { 
-        flex-direction: column !important; 
-        gap: 15px !important; 
-        align-items: center !important;
-    }
-
-    /* الأقسام والمحتوى */
-    .main-row { 
-        flex-direction: column !important; 
-        margin-bottom: 30px !important;
-    }
-
-    .side-label { 
-        width: 100% !important; 
-        border-bottom: 2px solid var(--gold) !important; 
-        padding-bottom: 10px !important; 
-        margin-bottom: 15px !important;
-        text-align: center !important;
-    }
-
-    .main-content { 
-        padding-left: 0 !important; 
-        border-left: none !important; 
-    }
-
-    /* شبكة الشهادات في الجوال */
-    .cert-grid {
-        grid-template-columns: 1fr !important; /* شهادة واحدة في كل سطر */
-        gap: 15px !important;
-    }
-
-    .cert-item { 
-        width: 100% !important; 
-    }
-
-    /* الجداول */
-    .skills-table {
-        display: block !important;
-        overflow-x: auto !important;
-        width: 100% !important;
-    }
-
-    /* شريط الاتصال السريع */
-    .quick-contact-bar { 
-        display: grid !important; 
-    }
-
-    /* تصغير الأزرار قليلاً لتناسب الشاشة */
-    .download-btn { width: 100% !important; justify-content: center !important; }
+@media (max-width: 768px) {
+    body { padding-bottom: 60px; }
+    .resume-wrapper { padding: 30px 20px; }
+    .main-header { flex-direction: column; text-align: center; }
+    .profile-circle { margin-right: 0; margin-bottom: 20px; }
+    .main-row { flex-direction: column; }
+    .side-label { width: 100%; border-bottom: 2px solid var(--gold); margin-bottom: 15px; }
+    .main-content { padding-left: 0; border-left: none; }
+    .quick-contact-bar { display: grid; }
 }
