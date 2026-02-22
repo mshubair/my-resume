@@ -47,7 +47,7 @@
             <div class="main-content">
                 <div class="cover-letter-card">
                     <h3><i class="fas fa-envelope-open-text"></i> Personal Statement (Cover Letter)</h3>
-                    <p>With over 12 years of hands-on experience in securing enterprise networks and streamlining IT operations, I am writing to express my strong interest in IT System Administration... 
+                    <p>With over 12 years of hands-on experience in securing enterprise networks and streamlining IT operations... 
                     <span class="read-more-trigger" onclick="toggleCoverLetter()" id="toggleBtn">Show Full Letter</span></p>
                     
                     <div id="full-cover-letter" style="display: none; margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px;">
@@ -69,9 +69,9 @@
                         <a href="https://www.udemy.com/certificate/UC-e6a4c4f1-59bd-400a-889b-7edb2208bc25/" target="_blank" class="cert-mini-btn">Udemy Verify</a>
                     </div>
                     <div class="cert-item badge-style">
-                        <i class="fas fa-id-badge fa-3x" style="color: var(--gold); margin-bottom: 10px;"></i>
+                        <i class="fas fa-id-badge fa-3x" style="color: #d4af37; margin-bottom: 10px;"></i>
                         <span>Saudi Professional License</span>
-                        <a href="Saudi-License.pdf" target="_blank" class="cert-mini-btn">View License</a>
+                        <a href="javascript:void(0)" onclick="openModal()" class="cert-mini-btn">View License</a>
                     </div>
                 </div>
             </div>
@@ -86,11 +86,11 @@
                 <div class="doc-download-box">
                     <div class="doc-item">
                         <span><strong>Bachelor's Degree Public Relation</strong> - King Abdulaziz University</span>
-                        <a href="Bachelor-Degree.pdf" download class="mini-download-btn"><i class="fas fa-download"></i> Get Copy</a>
+                        <a href="javascript:void(0)" onclick="openModal()" class="mini-download-btn"><i class="fas fa-lock"></i> Get Copy</a>
                     </div>
                     <div class="doc-item">
                         <span><strong>Diploma Computer Network Technology</strong> - Jeddah International Institute</span>
-                        <a href="Diploma-Network.pdf" download class="mini-download-btn"><i class="fas fa-download"></i> Get Copy</a>
+                        <a href="javascript:void(0)" onclick="openModal()" class="mini-download-btn"><i class="fas fa-lock"></i> Get Copy</a>
                     </div>
                 </div>
             </div>
@@ -119,15 +119,6 @@
                     <ul>
                         <li>Achieved 99.9% uptime and improved network performance</li>
                         <li>Installed and supported inpatient management software, streamlining patient data handling</li>
-                    </ul>
-                </div>
-
-                <div class="experience-block">
-                    <h3>IT SYSTEM ADMINISTRATOR | Casablanca Hotel - Royal</h3>
-                    <span class="period">Jan 2015 - May 2016</span>
-                    <ul>
-                        <li>Managed installation of 20 new CCTV systems, fingerprint access, and Wi-Fi Access points</li>
-                        <li>Support for Opera and Sun system (Check-in/out, Accounting, Restaurant)</li>
                     </ul>
                 </div>
             </div>
@@ -163,16 +154,6 @@
                 </table>
             </div>
         </section>
-
-        <section class="main-row no-border" data-aos="fade-up">
-            <div class="side-label">
-                <h2>EDUCATION</h2>
-            </div>
-            <div class="main-content">
-                <p><strong>Bachelor's Degree Public Relation</strong> - King Abdulaziz University (2010).</p>
-                <p><strong>Diploma Science Computer Network Technology</strong> - Jeddah International Institute (2007).</p>
-            </div>
-        </section>
     </div>
 
     <div class="quick-contact-bar">
@@ -180,10 +161,21 @@
         <a href="https://wa.me/966562500063" class="q-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
     </div>
 
+    <div id="customModal" class="modal-overlay">
+        <div class="modal-content">
+            <i class="fas fa-lock modal-icon"></i>
+            <h3>Confidential Document</h3>
+            <p>Official documents and academic certificates are provided upon request for authorized HR representatives during the hiring process.</p>
+            <button onclick="closeModal()" class="modal-close-btn">Understood</button>
+        </div>
+    </div>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // AOS Initialization
         AOS.init({ duration: 1000, once: true });
 
+        // Toggle Cover Letter
         function toggleCoverLetter() {
             var content = document.getElementById("full-cover-letter");
             var btn = document.getElementById("toggleBtn");
@@ -195,7 +187,25 @@
                 btn.innerHTML = "Show Full Letter";
             }
         }
+
+        // Modal Logic
+        function openModal() {
+            document.getElementById('customModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Stop scrolling
+        }
+
+        function closeModal() {
+            document.getElementById('customModal').style.display = 'none';
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+
+        // Close Modal on outside click
+        window.onclick = function(event) {
+            let modal = document.getElementById('customModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
     </script>
 </body>
 </html>
-
