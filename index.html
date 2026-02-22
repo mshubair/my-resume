@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohammed Shubair - IT Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylenew.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
@@ -58,20 +58,22 @@
                 </div>
 
                 <div class="cert-grid">
-                    <div class="cert-item badge-style">
+                    <div class="cert-item">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png" alt="MCSA" class="cert-logo">
                         <span>MCSE: Windows Server 2022</span>
                         <a href="https://www.udemy.com/certificate/UC-80a9ef95-30ff-4aac-bbf4-98bfba6ff242" target="_blank" class="cert-mini-btn">Udemy Verify</a>
                     </div>
-                    <div class="cert-item badge-style">
+                    <div class="cert-item">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Cisco_logo.svg/1280px-Cisco_logo.svg.png" alt="CCNA" class="cert-logo">
                         <span>CCNA V1.1 200-301</span>
                         <a href="https://www.udemy.com/certificate/UC-e6a4c4f1-59bd-400a-889b-7edb2208bc25/" target="_blank" class="cert-mini-btn">Udemy Verify</a>
                     </div>
-                    <div class="cert-item badge-style">
-                        <i class="fas fa-id-badge fa-3x" style="color: #d4af37; margin-bottom: 10px;"></i>
+                    <div class="cert-item">
+                        <i class="fas fa-id-badge fa-3x" style="color: var(--gold); margin-bottom: 10px;"></i>
                         <span>Saudi Professional License</span>
-                        <a href="javascript:void(0)" onclick="openModal()" class="cert-mini-btn">View License</a>
+                        <a href="#" onclick="openModal()" class="cert-mini-btn" title="Confidential Document">
+                            <i class="fas"></i> View License
+                        </a>
                     </div>
                 </div>
             </div>
@@ -83,14 +85,23 @@
                 <p>Verified Records</p>
             </div>
             <div class="main-content">
-                <div class="doc-download-box">
-                    <div class="doc-item">
-                        <span><strong>Bachelor's Degree Public Relation</strong> - King Abdulaziz University</span>
-                        <a href="javascript:void(0)" onclick="openModal()" class="mini-download-btn"><i class="fas fa-lock"></i> Get Copy</a>
+                <div class="cert-grid"> 
+                    <div class="cert-item">
+                        <i class="fas fa-university fa-3x cert-logo" style="color: var(--dark); margin-bottom: 15px;"></i>
+                        <span>Bachelor's Degree</span>
+                        <p style="font-size: 0.75rem; color: var(--gray); margin-bottom: 15px;">King Abdulaziz University</p>
+                        <a href="#" onclick="openModal()" class="mini-download-btn" title="Confidential Document">
+                            <i class="fas"></i> Get Copy
+                        </a>
                     </div>
-                    <div class="doc-item">
-                        <span><strong>Diploma Computer Network Technology</strong> - International Institute</span>
-                        <a href="javascript:void(0)" onclick="openModal()" class="mini-download-btn"><i class="fas fa-lock"></i> Get Copy</a>
+
+                    <div class="cert-item">
+                        <i class="fas fa-graduation-cap fa-3x cert-logo" style="color: var(--dark); margin-bottom: 15px;"></i>
+                        <span>Diploma IT Network</span>
+                        <p style="font-size: 0.75rem; color: var(--gray); margin-bottom: 15px;">International Institute</p>
+                        <a href="file1.pdf" target="_blank" class="mini-download-btn" title="View, Print, or Download Certificate">
+                            <i class="fas"></i> Get Copy
+                        </a>
                     </div>
                 </div>
             </div>
@@ -102,23 +113,22 @@
                 <p>Work History</p>
             </div>
             <div class="main-content">
-                <div class="experience-block">
-                    <h3>IT SYSTEM ADMINISTRATOR | Dr. Erfan & Bagedo General Hospital</h3>
-                    <span class="period">June 2021 - Aug 2025</span>
-                    <ul>
-                        <li>Managed and secured Active Directory environment, reducing security-related incidents by 15%</li>
-                        <li>Monitored and resolved Microsoft Exchange issues, ensuring seamless email services for 1000+ users</li>
-                        <li>Automated workflows saving 20+ hours of manual work weekly</li>
+                <div class="experience-block" style="margin-bottom: 30px;">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 5px;">IT SYSTEM ADMINISTRATOR | Dr. Erfan & Bagedo General Hospital</h3>
+                    <span class="period" style="color: var(--gold); font-weight: bold; font-size: 0.85rem;">June 2021 - Aug 2025</span>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>Managed and secured Active Directory environment, reducing incidents by 15%</li>
+                        <li>Resolved Microsoft Exchange issues for 1000+ users</li>
+                        <li>Automated workflows saving 20+ hours weekly</li>
                         <li>Resolved 95% of Helpdesk tickets within SLA</li>
                     </ul>
                 </div>
-
                 <div class="experience-block">
-                    <h3>IT SUPPORT MANAGER | Medical References Center</h3>
-                    <span class="period">May 2016 - June 2021</span>
-                    <ul>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 5px;">IT SUPPORT MANAGER | Medical References Center</h3>
+                    <span class="period" style="color: var(--gold); font-weight: bold; font-size: 0.85rem;">May 2016 - June 2021</span>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
                         <li>Achieved 99.9% uptime and improved network performance</li>
-                        <li>Installed and supported inpatient management software, streamlining patient data handling</li>
+                        <li>Installed and supported inpatient management software</li>
                     </ul>
                 </div>
             </div>
@@ -132,24 +142,12 @@
             <div class="main-content">
                 <table class="skills-table">
                     <thead>
-                        <tr>
-                            <th>Category</th>
-                            <th>Skills</th>
-                        </tr>
+                        <tr><th>Category</th><th>Skills</th></tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><strong>Networking</strong></td>
-                            <td>Configuration (Switch, Router), TCP/IP, Troubleshooting.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Windows Server</strong></td>
-                            <td>Active Directory, Group Policy, DNS/DHCP, MS Exchange.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Security</strong></td>
-                            <td>FortiGate, Sophos, Mikrotik, Firewall Configuration.</td>
-                        </tr>
+                        <tr><td><strong>Networking</strong></td><td>Configuration (Switch, Router), TCP/IP, Troubleshooting.</td></tr>
+                        <tr><td><strong>Windows Server</strong></td><td>Active Directory, Group Policy, DNS/DHCP, MS Exchange.</td></tr>
+                        <tr><td><strong>Security</strong></td><td>FortiGate, Sophos, Mikrotik, Firewall Configuration.</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -172,10 +170,8 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // AOS Initialization
         AOS.init({ duration: 1000, once: true });
 
-        // Toggle Cover Letter
         function toggleCoverLetter() {
             var content = document.getElementById("full-cover-letter");
             var btn = document.getElementById("toggleBtn");
@@ -188,25 +184,17 @@
             }
         }
 
-        // Modal Logic
-        function openModal() {
-            document.getElementById('customModal').style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // Stop scrolling
+        function openModal() { 
+            document.getElementById('customModal').style.display = 'flex'; 
+            document.body.style.overflow = 'hidden'; 
         }
-
-        function closeModal() {
-            document.getElementById('customModal').style.display = 'none';
-            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        function closeModal() { 
+            document.getElementById('customModal').style.display = 'none'; 
+            document.body.style.overflow = 'auto'; 
         }
-
-        // Close Modal on outside click
-        window.onclick = function(event) {
-            let modal = document.getElementById('customModal');
-            if (event.target == modal) {
-                closeModal();
-            }
+        window.onclick = function(event) { 
+            if (event.target == document.getElementById('customModal')) closeModal(); 
         }
     </script>
 </body>
 </html>
-
