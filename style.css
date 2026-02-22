@@ -14,7 +14,6 @@ body {
     padding: 50px 0; 
     line-height: 1.6; 
     color: var(--dark); 
-    overflow-x: hidden; /* لمنع الاهتزاز الجانبي في الجوال */
 }
 
 .resume-wrapper { 
@@ -82,10 +81,10 @@ body {
 }
 
 .cert-item:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-.cert-logo { width: 60px; height: auto; margin-bottom: 15px; transition: 0.3s; }
+.cert-logo { width: 60px; height: auto; margin-bottom: 15px; }
 .cert-item span { font-size: 0.85rem; font-weight: bold; min-height: 40px; display: block; margin-bottom: 10px; }
 
-/* --- الأزرار المدمجة والذكية --- */
+/* --- الأزرار الذكية --- */
 .cert-mini-btn, .mini-download-btn {
     display: inline-flex !important;
     align-items: center !important;
@@ -105,126 +104,57 @@ body {
 }
 
 .cert-mini-btn[href="#"] i::before, 
-.mini-download-btn[href="#"] i::before {
-    content: "\f023"; /* Lock Icon */
-    color: var(--gold) !important;
-}
+.mini-download-btn[href="#"] i::before { content: "\f023"; color: var(--gold) !important; }
 
 .cert-mini-btn:not([href="#"]), 
-.mini-download-btn:not([href="#"]) {
-    border-color: var(--gold) !important;
-}
+.mini-download-btn:not([href="#"]) { border-color: var(--gold) !important; }
 
 .cert-mini-btn:not([href="#"]) i::before, 
-.mini-download-btn:not([href="#"]) i::before {
-    content: "\f06e"; /* Eye Icon */
-    color: var(--gold) !important;
-}
+.mini-download-btn:not([href="#"]) i::before { content: "\f06e"; color: var(--gold) !important; }
 
-.cert-mini-btn:hover, .mini-download-btn:hover {
-    background-color: var(--gold) !important;
-    color: #000000 !important;
-    border-color: var(--gold) !important;
-}
+.cert-mini-btn:hover, .mini-download-btn:hover { background-color: var(--gold) !important; color: #000 !important; }
 
-.cert-mini-btn:hover i, .mini-download-btn:hover i { color: #000000 !important; }
-
-/* --- Other Elements --- */
-.cover-letter-card { background: #fdfdfd; border-left: 4px solid var(--gold); padding: 20px; margin-bottom: 25px; border-radius: 0 8px 8px 0; }
-.read-more-trigger { color: var(--gold); cursor: pointer; font-weight: bold; text-decoration: underline; }
-.skills-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9rem; }
-.skills-table th { text-align: left; background: #f8f8f8; padding: 10px; border-bottom: 2px solid var(--gold); }
+/* --- بقية التنسيقات --- */
+.cover-letter-card { background: #fdfdfd; border-left: 4px solid var(--gold); padding: 20px; margin-bottom: 25px; }
+.skills-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
 .skills-table td { padding: 12px 10px; border-bottom: 1px solid var(--line); }
 
 .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 10000; justify-content: center; align-items: center; backdrop-filter: blur(5px); }
 .modal-content { background: #1a1a1a; padding: 40px; border-radius: 20px; border: 2px solid var(--gold); text-align: center; max-width: 450px; color: white; }
-.modal-icon { font-size: 3.5rem; color: var(--gold); margin-bottom: 20px; }
-.modal-close-btn { background: var(--gold); color: #000; border: none; padding: 12px 35px; border-radius: 30px; font-weight: bold; margin-top: 25px; cursor: pointer; }
+.modal-close-btn { background: var(--gold); color: #000; padding: 12px 35px; border-radius: 30px; cursor: pointer; border: none; font-weight: bold; }
 
 .quick-contact-bar { position: fixed; bottom: 0; left: 0; width: 100%; display: none; grid-template-columns: 1fr 1fr; z-index: 999; }
 .q-btn { padding: 15px; text-align: center; color: white; text-decoration: none; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px; }
 .call { background: var(--dark); }
 .whatsapp { background: #25D366; }
 
-/* ====================================================== */
-/* الحــــل النهـــــائي والمطــــور للجــــوال (768px) */
-/* ====================================================== */
-@media screen and (max-width: 768px) {
-    
+/* --- التعديل السحري للجوال (إصلاح التداخل مع الحفاظ على التصميم القديم) --- */
+@media (max-width: 768px) {
     body { padding: 0 !important; }
+    .resume-wrapper { padding: 40px 20px !important; margin: 0 !important; width: 100% !important; box-shadow: none !important; }
+    
+    /* الهيدر: يبقى كما هو مع تقليل المسافات */
+    .main-header { flex-direction: column !important; text-align: center !important; margin-bottom: 40px !important; }
+    .profile-circle { margin-right: 0 !important; margin-bottom: 20px !important; width: 110px !important; height: 110px !important; }
+    .name { font-size: 2.2rem !important; }
+    
+    /* منع التداخل في البار السفلي للهيدر */
+    .contact-bar { flex-direction: column !important; gap: 10px !important; align-items: center !important; }
 
-    .resume-wrapper { 
-        margin: 0 !important; 
-        padding: 20px !important; 
-        width: 100% !important; 
-        min-height: auto !important;
-        box-shadow: none !important;
-    }
+    /* الحفاظ على التقسيم الجانبي لكن بشكل طولي */
+    .main-row { flex-direction: column !important; }
+    .side-label { width: 100% !important; border-bottom: 2px solid var(--gold) !important; margin-bottom: 15px !important; padding-bottom: 5px !important; }
+    .main-content { padding-left: 0 !important; border-left: none !important; }
 
-    /* هيدر الجوال */
-    .main-header { 
-        flex-direction: column !important; 
-        text-align: center !important; 
-        margin-bottom: 40px !important;
-    }
-
-    .profile-circle { 
-        margin-right: 0 !important; 
-        margin-bottom: 20px !important; 
-        width: 100px !important; 
-        height: 100px !important; 
-    }
-
-    .name { font-size: 2rem !important; }
-
-    .contact-bar { 
-        flex-direction: column !important; 
-        gap: 15px !important; 
-        align-items: center !important;
-    }
-
-    /* الأقسام والمحتوى */
-    .main-row { 
-        flex-direction: column !important; 
-        margin-bottom: 30px !important;
-    }
-
-    .side-label { 
-        width: 100% !important; 
-        border-bottom: 2px solid var(--gold) !important; 
-        padding-bottom: 10px !important; 
-        margin-bottom: 15px !important;
-        text-align: center !important;
-    }
-
-    .main-content { 
-        padding-left: 0 !important; 
-        border-left: none !important; 
-    }
-
-    /* شبكة الشهادات في الجوال */
-    .cert-grid {
-        grid-template-columns: 1fr !important; /* شهادة واحدة في كل سطر */
-        gap: 15px !important;
-    }
-
-    .cert-item { 
-        width: 100% !important; 
-    }
-
-    /* الجداول */
-    .skills-table {
-        display: block !important;
-        overflow-x: auto !important;
-        width: 100% !important;
-    }
-
-    /* شريط الاتصال السريع */
-    .quick-contact-bar { 
-        display: grid !important; 
-    }
-
-    /* تصغير الأزرار قليلاً لتناسب الشاشة */
-    .download-btn { width: 100% !important; justify-content: center !important; }
+    /* شبكة الشهادات: الحفاظ على وجود 2 بجانب بعض (Grid) كما في التصميم القديم */
+    .cert-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+    .cert-item { padding: 15px 10px !important; }
+    .cert-item span { font-size: 0.75rem !important; min-height: 35px !important; }
+    
+    .quick-contact-bar { display: grid !important; }
 }
 
+/* للجوالات الصغيرة جداً منعاً لأي تداخل */
+@media (max-width: 400px) {
+    .cert-grid { grid-template-columns: 1fr !important; }
+}
