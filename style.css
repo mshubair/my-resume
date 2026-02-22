@@ -161,3 +161,60 @@ body {
     .main-content { padding-left: 0; border-left: none; }
     .quick-contact-bar { display: grid; }
 }
+
+
+/* حل مشكلة التناسق مع شاشات الجوال */
+@media (max-width: 768px) {
+    /* تصغير حجم الهيدر ليتناسب مع عرض الجوال */
+    .main-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 10px;
+    }
+
+    .contact-bar {
+        grid-template-columns: 1fr; /* جعل معلومات الاتصال تحت بعضها */
+        gap: 10px;
+    }
+
+    /* ضبط عرض الأقسام الرئيسية */
+    .main-row {
+        flex-direction: column;
+        padding: 20px 15px;
+    }
+
+    .side-label {
+        width: 100%;
+        margin-bottom: 15px;
+        text-align: center;
+        border-right: none;
+        border-bottom: 2px solid var(--gold);
+        padding-bottom: 10px;
+    }
+
+    /* ضبط شبكة الشهادات لتصبح عنصر واحد في كل سطر */
+    .cert-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+    /* ضبط حجم الأزرار لتكون سهلة اللمس */
+    .download-btn, .q-btn {
+        width: 100%;
+        justify-content: center;
+        margin: 5px 0;
+    }
+
+    /* منع الجداول من الخروج عن الشاشة */
+    .skills-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* تعديل الهوامش العامة */
+    .resume-wrapper {
+        margin: 10px;
+        width: auto;
+    }
+}
