@@ -25,209 +25,134 @@ body {
     box-shadow: 0 0 20px rgba(0,0,0,0.1); 
 }
 
-/* Header */
+/* --- Header --- */
 .main-header { display: flex; align-items: center; margin-bottom: 70px; }
 .profile-circle { 
-    width: 130px; 
-    height: 130px; 
-    background: var(--dark); 
-    border-radius: 50%; 
-    color: white; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    font-size: 2.5rem; 
-    margin-right: 40px; 
+    width: 130px; height: 130px; 
+    background: var(--dark); border-radius: 50%; 
+    color: white; display: flex; align-items: center; justify-content: center; 
+    font-size: 2.5rem; margin-right: 40px; 
 }
 .name { font-size: 2.8rem; margin: 0; letter-spacing: 2px; }
 .highlight { color: var(--gold); }
 .role { font-size: 1.1rem; color: var(--gray); margin: 5px 0 15px 0; }
 
 .download-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 25px;
-    padding: 10px 25px;
-    background-color: var(--gold);
-    color: #000 !important;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    border: 2px solid var(--gold);
+    display: inline-flex; align-items: center; gap: 10px;
+    margin-bottom: 25px; padding: 10px 25px;
+    background-color: var(--gold); color: #000 !important;
+    text-decoration: none; border-radius: 30px;
+    font-weight: bold; font-size: 0.9rem;
+    transition: all 0.3s ease; border: 2px solid var(--gold);
     cursor: pointer;
 }
-
-.download-btn:hover {
-    background-color: transparent;
-    color: var(--gold) !important;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(255, 196, 0, 0.3);
-}
+.download-btn:hover { background-color: transparent; color: var(--gold) !important; transform: translateY(-3px); }
 
 .contact-bar { display: flex; gap: 40px; border-top: 1px solid var(--line); padding-top: 15px; }
 .info-box strong { display: block; font-size: 0.75rem; letter-spacing: 1px; }
 .info-box span { font-size: 0.9rem; color: var(--gray); }
 
-/* Layout Grid */
+/* --- Layout Grid --- */
 .main-row { display: flex; margin-bottom: 40px; }
 .side-label { flex: 0 0 180px; }
 .side-label h2 { font-size: 1.1rem; margin: 0; letter-spacing: 2px; }
-.side-label p { font-size: 0.75rem; color: var(--gray); margin: 3px 0; }
-
+.side-label p { font-size: 0.75rem; color: var(--gray); }
 .main-content { flex: 1; padding-left: 40px; border-left: 1px solid var(--line); }
-.no-border .main-content { border-left: none; }
 
-/* Experience & Content */
-.experience-block { margin-bottom: 30px; }
-.experience-block h3 { font-size: 1.05rem; margin: 0; }
-.period { color: var(--gold); font-size: 0.85rem; font-weight: bold; }
-ul { padding-left: 20px; margin-top: 10px; }
-li { margin-bottom: 6px; font-size: 0.95rem; }
-
-/* Skills Table */
-.skills-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9rem; }
-.skills-table th { text-align: left; background: #f8f8f8; padding: 10px; border-bottom: 2px solid var(--gold); text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem; }
-.skills-table td { padding: 12px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
-
-/* Portfolio Styles */
-.cover-letter-card {
-    background: #fdfdfd;
-    border-left: 4px solid var(--gold);
-    padding: 20px;
-    margin-bottom: 25px;
-    border-radius: 0 8px 8px 0;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
-}
-.read-more-trigger { color: var(--gold); cursor: pointer; font-weight: bold; text-decoration: underline; }
-
+/* --- Portfolio & Documents Cards --- */
 .cert-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 15px;
 }
+
 .cert-item {
-    background: var(--dark);
-    color: white;
-    padding: 12px;
+    background: #fff !important;
+    padding: 20px;
     text-align: center;
     border-radius: 8px;
+    border: 1px solid #eee;
     border-bottom: 3px solid var(--gold);
     transition: 0.3s;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-.cert-item:hover { transform: translateY(-5px); }
-
-.badge-style {
-    background: #fff !important;
     color: var(--dark) !important;
-    border: 1px solid #eee !important;
-    padding: 20px !important;
 }
 
-.cert-logo { width: 60px; height: auto; margin-bottom: 15px; filter: grayscale(100%); transition: 0.3s; }
-.cert-item:hover .cert-logo { filter: grayscale(0%); transform: scale(1.1); }
+.cert-item:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.cert-logo { width: 60px; height: auto; margin-bottom: 15px; transition: 0.3s; }
+.cert-item span { font-size: 0.85rem; font-weight: bold; min-height: 40px; display: block; margin-bottom: 10px; }
 
-.cert-mini-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    margin-top: auto;
-    padding: 6px 12px;
-    background-color: var(--dark) !important;
+/* --- الأزرار المدمجة والذكية (التنسيق النهائي) --- */
+
+.cert-mini-btn, .mini-download-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    margin-top: auto !important;
+    padding: 10px 15px !important;
+    background-color: #222 !important; /* خلفية سوداء دائمًا كقاعدة */
+    color: #ffffff !important; /* نص أبيض */
+    text-decoration: none !important;
+    font-size: 0.75rem !important;
+    font-weight: bold !important;
+    border-radius: 4px !important;
+    width: 100% !important;
+    transition: all 0.3s ease !important;
+    border: 1px solid #222 !important; /* إطار أسود افتراضي */
+}
+
+/* الحالة 1: عندما يكون الرابط مغلق (#) -> يظهر القفل الذهبي */
+.cert-mini-btn[href="#"] i::before, 
+.mini-download-btn[href="#"] i::before {
+    content: "\f023"; /* رمز القفل */
     color: var(--gold) !important;
-    text-decoration: none;
-    font-size: 0.7rem;
-    font-weight: bold;
-    border-radius: 4px;
-    width: 100%;
-    justify-content: center;
-    cursor: pointer;
 }
 
-.cert-mini-btn:hover { background-color: var(--gold) !important; color: var(--dark) !important; }
-
-/* Documents */
-.doc-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #f9f9f9;
-    padding: 12px 15px;
-    border-radius: 6px;
-    margin-bottom: 10px;
-    border: 1px solid #eee;
+/* الحالة 2: عندما يكون الرابط مفتوحاً (ملف حقيقي) -> تظهر العين والإطار الذهبي */
+.cert-mini-btn:not([href="#"]), 
+.mini-download-btn:not([href="#"]) {
+    border-color: var(--gold) !important; /* إطار ذهبي لتمييز الزر المتاح */
+    cursor: pointer !important;
 }
 
-.mini-download-btn {
-    font-size: 0.7rem;
-    color: #fff !important;
-    background: var(--dark);
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
+.cert-mini-btn:not([href="#"]) i::before, 
+.mini-download-btn:not([href="#"]) i::before {
+    content: "\f06e"; /* رمز العين */
+    color: var(--gold) !important;
 }
 
-/* Modal Style - Black & Gold Identity */
-.modal-overlay {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    z-index: 10000;
-    justify-content: center;
-    align-items: center;
-    backdrop-filter: blur(5px);
+/* تأثير الـ Hover العام: الخلفية تصبح ذهبية والنص والأيقونة باللون الأسود */
+.cert-mini-btn:hover, .mini-download-btn:hover {
+    background-color: var(--gold) !important;
+    color: #000000 !important;
+    border-color: var(--gold) !important;
 }
 
-.modal-content {
-    background: #1a1a1a;
-    padding: 40px 30px;
-    border-radius: 20px;
-    border: 2px solid var(--gold);
-    text-align: center;
-    max-width: 450px;
-    width: 90%;
-    color: white;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.8);
+.cert-mini-btn:hover i, .mini-download-btn:hover i { 
+    color: #000000 !important; 
 }
 
+/* --- بقية العناصر --- */
+.cover-letter-card { background: #fdfdfd; border-left: 4px solid var(--gold); padding: 20px; margin-bottom: 25px; border-radius: 0 8px 8px 0; }
+.read-more-trigger { color: var(--gold); cursor: pointer; font-weight: bold; text-decoration: underline; }
+.skills-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9rem; }
+.skills-table th { text-align: left; background: #f8f8f8; padding: 10px; border-bottom: 2px solid var(--gold); }
+.skills-table td { padding: 12px 10px; border-bottom: 1px solid var(--line); }
+
+.modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 10000; justify-content: center; align-items: center; backdrop-filter: blur(5px); }
+.modal-content { background: #1a1a1a; padding: 40px; border-radius: 20px; border: 2px solid var(--gold); text-align: center; max-width: 450px; color: white; }
 .modal-icon { font-size: 3.5rem; color: var(--gold); margin-bottom: 20px; }
-.modal-content h3 { color: var(--gold); margin-bottom: 15px; }
-.modal-content p { color: #ccc; font-size: 0.95rem; }
-.modal-close-btn {
-    background: var(--gold);
-    color: #000;
-    border: none;
-    padding: 12px 35px;
-    border-radius: 30px;
-    font-weight: bold;
-    margin-top: 25px;
-    cursor: pointer;
-}
+.modal-close-btn { background: var(--gold); color: #000; border: none; padding: 12px 35px; border-radius: 30px; font-weight: bold; margin-top: 25px; cursor: pointer; }
 
-/* Quick Contact Bar */
-.quick-contact-bar {
-    position: fixed;
-    bottom: 0; left: 0;
-    width: 100%;
-    display: none;
-    grid-template-columns: 1fr 1fr;
-    z-index: 999;
-}
+.quick-contact-bar { position: fixed; bottom: 0; left: 0; width: 100%; display: none; grid-template-columns: 1fr 1fr; z-index: 999; }
 .q-btn { padding: 15px; text-align: center; color: white; text-decoration: none; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px; }
 .call { background: var(--dark); }
 .whatsapp { background: #25D366; }
 
-/* Mobile Responsive */
 @media (max-width: 768px) {
-    body { padding-bottom: 60px; }
     .resume-wrapper { padding: 30px 20px; }
     .main-header { flex-direction: column; text-align: center; }
     .profile-circle { margin-right: 0; margin-bottom: 20px; }
