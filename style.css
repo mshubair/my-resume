@@ -31,7 +31,7 @@ body {
     width: 130px; height: 130px; 
     background: var(--dark); border-radius: 50%; 
     color: white; display: flex; align-items: center; justify-content: center; 
-    font-size: 2.5rem; margin-right: 40px; flex-shrink: 0;
+    font-size: 2.5rem; margin-right: 40px; 
 }
 .name { font-size: 2.8rem; margin: 0; letter-spacing: 2px; }
 .highlight { color: var(--gold); }
@@ -81,10 +81,10 @@ body {
 }
 
 .cert-item:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-.cert-logo { width: 60px; height: auto; margin-bottom: 15px; }
+.cert-logo { width: 60px; height: auto; margin-bottom: 15px; transition: 0.3s; }
 .cert-item span { font-size: 0.85rem; font-weight: bold; min-height: 40px; display: block; margin-bottom: 10px; }
 
-/* --- الأزرار الذكية --- */
+/* --- الأزرار المدمجة والذكية --- */
 .cert-mini-btn, .mini-download-btn {
     display: inline-flex !important;
     align-items: center !important;
@@ -92,8 +92,8 @@ body {
     gap: 8px !important;
     margin-top: auto !important;
     padding: 10px 15px !important;
-    background-color: #222 !important; 
-    color: #ffffff !important; 
+    background-color: #222 !important;
+    color: #ffffff !important;
     text-decoration: none !important;
     font-size: 0.75rem !important;
     font-weight: bold !important;
@@ -104,54 +104,60 @@ body {
 }
 
 .cert-mini-btn[href="#"] i::before, 
-.mini-download-btn[href="#"] i::before { content: "\f023"; color: var(--gold) !important; }
+.mini-download-btn[href="#"] i::before {
+    content: "\f023";
+    color: var(--gold) !important;
+}
 
 .cert-mini-btn:not([href="#"]), 
-.mini-download-btn:not([href="#"]) { border-color: var(--gold) !important; }
+.mini-download-btn:not([href="#"]) {
+    border-color: var(--gold) !important;
+    cursor: pointer !important;
+}
 
 .cert-mini-btn:not([href="#"]) i::before, 
-.mini-download-btn:not([href="#"]) i::before { content: "\f06e"; color: var(--gold) !important; }
+.mini-download-btn:not([href="#"]) i::before {
+    content: "\f06e";
+    color: var(--gold) !important;
+}
 
-.cert-mini-btn:hover, .mini-download-btn:hover { background-color: var(--gold) !important; color: #000 !important; }
+.cert-mini-btn:hover, .mini-download-btn:hover {
+    background-color: var(--gold) !important;
+    color: #000000 !important;
+    border-color: var(--gold) !important;
+}
 
-/* --- بقية التنسيقات --- */
-.cover-letter-card { background: #fdfdfd; border-left: 4px solid var(--gold); padding: 20px; margin-bottom: 25px; }
-.skills-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+.cert-mini-btn:hover i, .mini-download-btn:hover i { color: #000000 !important; }
+
+/* --- العناصر الإضافية --- */
+.cover-letter-card { background: #fdfdfd; border-left: 4px solid var(--gold); padding: 20px; margin-bottom: 25px; border-radius: 0 8px 8px 0; }
+.read-more-trigger { color: var(--gold); cursor: pointer; font-weight: bold; text-decoration: underline; }
+.skills-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9rem; }
+.skills-table th { text-align: left; background: #f8f8f8; padding: 10px; border-bottom: 2px solid var(--gold); }
 .skills-table td { padding: 12px 10px; border-bottom: 1px solid var(--line); }
 
 .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 10000; justify-content: center; align-items: center; backdrop-filter: blur(5px); }
 .modal-content { background: #1a1a1a; padding: 40px; border-radius: 20px; border: 2px solid var(--gold); text-align: center; max-width: 450px; color: white; }
-.modal-close-btn { background: var(--gold); color: #000; padding: 12px 35px; border-radius: 30px; cursor: pointer; border: none; font-weight: bold; }
+.modal-icon { font-size: 3.5rem; color: var(--gold); margin-bottom: 20px; }
+.modal-close-btn { background: var(--gold); color: #000; border: none; padding: 12px 35px; border-radius: 30px; font-weight: bold; margin-top: 25px; cursor: pointer; }
 
 .quick-contact-bar { position: fixed; bottom: 0; left: 0; width: 100%; display: none; grid-template-columns: 1fr 1fr; z-index: 999; }
 .q-btn { padding: 15px; text-align: center; color: white; text-decoration: none; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px; }
 .call { background: var(--dark); }
 .whatsapp { background: #25D366; }
 
-
+/* ====================================================== */
+/* التعديل النهائي للجوال: يجمع بين التصميم القديم والثبات */
+/* ====================================================== */
 @media (max-width: 768px) {
-    /* الحفاظ على توزيع البيانات الشخصية بجانب بعضها */
-    .contact-bar { 
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important; /* تقسيم السطر لقسمين متساويين */
-        gap: 15px 10px !important;
-        text-align: left !important;
-        border-top: 1px solid var(--line) !important;
-        padding-top: 15px !important;
+    
+    .resume-wrapper {
+        padding: 30px 15px !important; 
+        width: auto !important;
+        margin: 10px !important;
     }
 
-    .info-box strong {
-        font-size: 0.7rem !important; /* تصغير طفيف للعناوين */
-        letter-spacing: 0.5px !important;
-    }
-
-    .info-box span {
-        font-size: 0.85rem !important; /* حجم النص المناسب للجوال */
-        color: var(--gray) !important;
-        display: block !important;
-    }
-
-    /* إصلاح الهيدر ليتناسب مع هذا التوزيع */
+    /* هيدر الجوال */
     .main-header {
         flex-direction: column !important;
         text-align: center !important;
@@ -161,4 +167,42 @@ body {
         margin-right: 0 !important;
         margin-bottom: 20px !important;
     }
+
+    /* بيانات الاتصال: 2 بجانب بعض */
+    .contact-bar { 
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important; 
+        gap: 15px 10px !important;
+        text-align: left !important;
+        border-top: 1px solid var(--line) !important;
+        padding-top: 15px !important;
+    }
+
+    .info-box strong { font-size: 0.7rem !important; letter-spacing: 0.5px !important; }
+    .info-box span { font-size: 0.85rem !important; color: var(--gray) !important; display: block !important; }
+
+    /* شبكة الشهادات: 2 بجانب بعض (مثل التصميم القديم) */
+    .cert-grid {
+        grid-template-columns: 1fr 1fr !important; 
+        gap: 10px !important;
+    }
+
+    .cert-item { padding: 15px 10px !important; }
+    .cert-item span { font-size: 0.75rem !important; min-height: 35px !important; }
+
+    /* الأقسام الرئيسية */
+    .main-row { flex-direction: column !important; }
+    .side-label { 
+        width: 100% !important; 
+        border-bottom: 2px solid var(--gold) !important; 
+        margin-bottom: 15px !important; 
+        padding-bottom: 5px !important; 
+    }
+    .main-content { padding-left: 0 !important; border-left: none !important; }
+
+    .quick-contact-bar { display: grid !important; }
+}
+
+@media (max-width: 400px) {
+    .cert-grid, .contact-bar { grid-template-columns: 1fr !important; }
 }
