@@ -128,33 +128,37 @@ body {
 .call { background: var(--dark); }
 .whatsapp { background: #25D366; }
 
-/* --- التعديل السحري للجوال (إصلاح التداخل مع الحفاظ على التصميم القديم) --- */
+
 @media (max-width: 768px) {
-    body { padding: 0 !important; }
-    .resume-wrapper { padding: 40px 20px !important; margin: 0 !important; width: 100% !important; box-shadow: none !important; }
-    
-    /* الهيدر: يبقى كما هو مع تقليل المسافات */
-    .main-header { flex-direction: column !important; text-align: center !important; margin-bottom: 40px !important; }
-    .profile-circle { margin-right: 0 !important; margin-bottom: 20px !important; width: 110px !important; height: 110px !important; }
-    .name { font-size: 2.2rem !important; }
-    
-    /* منع التداخل في البار السفلي للهيدر */
-    .contact-bar { flex-direction: column !important; gap: 10px !important; align-items: center !important; }
+    /* الحفاظ على توزيع البيانات الشخصية بجانب بعضها */
+    .contact-bar { 
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important; /* تقسيم السطر لقسمين متساويين */
+        gap: 15px 10px !important;
+        text-align: left !important;
+        border-top: 1px solid var(--line) !important;
+        padding-top: 15px !important;
+    }
 
-    /* الحفاظ على التقسيم الجانبي لكن بشكل طولي */
-    .main-row { flex-direction: column !important; }
-    .side-label { width: 100% !important; border-bottom: 2px solid var(--gold) !important; margin-bottom: 15px !important; padding-bottom: 5px !important; }
-    .main-content { padding-left: 0 !important; border-left: none !important; }
+    .info-box strong {
+        font-size: 0.7rem !important; /* تصغير طفيف للعناوين */
+        letter-spacing: 0.5px !important;
+    }
 
-    /* شبكة الشهادات: الحفاظ على وجود 2 بجانب بعض (Grid) كما في التصميم القديم */
-    .cert-grid { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
-    .cert-item { padding: 15px 10px !important; }
-    .cert-item span { font-size: 0.75rem !important; min-height: 35px !important; }
-    
-    .quick-contact-bar { display: grid !important; }
-}
+    .info-box span {
+        font-size: 0.85rem !important; /* حجم النص المناسب للجوال */
+        color: var(--gray) !important;
+        display: block !important;
+    }
 
-/* للجوالات الصغيرة جداً منعاً لأي تداخل */
-@media (max-width: 400px) {
-    .cert-grid { grid-template-columns: 1fr !important; }
+    /* إصلاح الهيدر ليتناسب مع هذا التوزيع */
+    .main-header {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+
+    .profile-circle {
+        margin-right: 0 !important;
+        margin-bottom: 20px !important;
+    }
 }
