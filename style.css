@@ -154,31 +154,25 @@ body {
 
 
 /* ====================================================== */
-/* التنسيق النهائي الاحترافي للجوال والتابلت (كل الشاشات الصغيرة) */
+/* التنسيق النهائي الاحترافي للجوال والتابلت - النسخة الشاملة */
 /* ====================================================== */
 @media (max-width: 768px) {
-    /* 1. ضبط الخلفية لتكون رمادية خفيفة جداً لتعطي عمقاً للموقع */
     body { 
         background: #f0f2f5 !important; 
-        padding: 10px 0 !important; /* مسافة بسيطة جداً من الأعلى والأسفل */
+        padding: 10px 0 !important;
         margin: 0 !important;
     }
 
-    /* 2. تحويل الورقة إلى بطاقة (Card) فخمة بظل ناعم غير مزعج */
     .resume-wrapper { 
-        max-width: 95% !important;     /* توازن بين ملء الشاشة وإظهار الظل */
-        margin: 0 auto !important;      /* توسيط الورقة في التابلت والجوال */
+        max-width: 95% !important;
+        margin: 0 auto !important;
         padding: 25px 15px !important; 
-        border-radius: 12px !important; /* زوايا منحنية تعطي طابعاً عصرياً */
-        
-        /* ظل احترافي (Soft Shadow): خفيف جداً، غير عريض، ولا يظهر كإطار رمادي */
+        border-radius: 12px !important;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05) !important; 
-        
         border: none !important;
-        min-height: auto !important; /* إلغاء الارتفاع الكبير في الجوال */
+        min-height: auto !important;
     }
 
-    /* 3. الهيدر: تصغير المسافات لمنع التشتت */
     .main-header {
         flex-direction: column !important;
         text-align: center !important;
@@ -195,10 +189,9 @@ body {
 
     .name { font-size: 1.8rem !important; letter-spacing: 1px !important; }
 
-    /* 4. البيانات الشخصية: التنسيق العرضي (أهم نقطة طلبتها) */
     .contact-bar { 
         display: grid !important;
-        grid-template-columns: 1fr 1fr !important; /* تقسيم السطر لقسمين متساويين */
+        grid-template-columns: 1fr 1fr !important; 
         gap: 15px 10px !important;
         text-align: left !important;
         border-top: 1px solid var(--line) !important;
@@ -210,15 +203,12 @@ body {
         font-size: 0.65rem !important;
         font-weight: 800 !important;
         color: #000 !important;
-        letter-spacing: 0.5px !important;
     }
 
     .info-box span {
         font-size: 0.8rem !important;
-        color: var(--gray) !important;
     }
 
-    /* 5. معالجة الأقسام والمساحات (INTRO, EXPERIENCE...) */
     .main-row { 
         flex-direction: column !important; 
         margin-bottom: 20px !important; 
@@ -231,29 +221,23 @@ body {
         padding-bottom: 3px;
     }
 
-    .side-label h2 { font-size: 1rem !important; }
-    .side-label p { display: none; } /* إخفاء الوصف الفرعي في الجوال لتوفير مساحة */
+    .side-label h2 { font-size: 1.1rem !important; }
+    .side-label p { display: none !important; } /* توفير مساحة في الجوال */
 
     .main-content { 
         padding-left: 0 !important; 
         border-left: none !important;
+        margin-top: 5px !important;
     }
 
-    /* 6. الشهادات والوثائق: 2 في كل سطر بشكل منظم */
     .cert-grid {
         grid-template-columns: 1fr 1fr !important; 
         gap: 10px !important;
     }
     
     .cert-item { padding: 15px 10px !important; }
-    .cert-logo { width: 45px !important; }
-    .cert-item span { font-size: 0.75rem !important; min-height: 35px !important; }
-
-    /* 7. إظهار شريط الاتصال السريع في الأسفل */
-    .quick-contact-bar { 
-        display: grid !important; 
-    }
-}
+    .quick-contact-bar { display: grid !important; }
+}}
 
 
 
@@ -292,5 +276,6 @@ body {
     .main-content { padding-left: 0; border-left: none; }
     .quick-contact-bar { display: grid; }
 } */
+
 
 
