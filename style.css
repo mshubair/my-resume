@@ -2,17 +2,16 @@
     --gold: #FFC400;
     --dark: #222;
     --gray: #777;
-    --light-bg: #f9f9f9;
     --line: #eeeeee;
 }
 
-* { box-sizing: border-box; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body { 
     font-family: 'Segoe UI', Arial, sans-serif; 
     background: #ddd; 
-    padding: 30px 0; 
-    line-height: 1.5; 
+    padding: 40px 0; 
+    line-height: 1.6; 
     color: var(--dark); 
 }
 
@@ -20,87 +19,75 @@ body {
     max-width: 950px; 
     margin: auto; 
     background: white; 
-    padding: 40px 60px; 
-    min-height: auto; 
+    padding: 50px; 
     box-shadow: 0 0 20px rgba(0,0,0,0.1); 
 }
 
-/* --- Header --- */
+/* --- Header & Contact Bar --- */
 .main-header { display: flex; align-items: center; margin-bottom: 40px; }
 .profile-circle { 
     width: 120px; height: 120px; 
     background: var(--dark); border-radius: 50%; 
     color: white; display: flex; align-items: center; justify-content: center; 
-    font-size: 2.2rem; margin-right: 40px; 
+    font-size: 2.5rem; margin-right: 40px; 
 }
-.name { font-size: 2.5rem; margin: 0; letter-spacing: 1px; }
+.name { font-size: 2.8rem; margin: 0; }
 .highlight { color: var(--gold); }
-.role { font-size: 1rem; color: var(--gray); margin: 5px 0 15px 0; }
+.role { font-size: 1.1rem; color: var(--gray); margin-bottom: 15px; }
 
-.download-btn {
-    display: inline-flex; align-items: center; gap: 10px;
-    margin-bottom: 25px; padding: 10px 25px;
-    background-color: var(--gold); color: #000 !important;
-    text-decoration: none; border-radius: 30px;
-    font-weight: bold; font-size: 0.9rem;
-    transition: all 0.3s ease; border: 2px solid var(--gold);
+.contact-bar { 
+    display: flex; 
+    gap: 30px; 
+    border-top: 1px solid var(--line); 
+    padding-top: 15px; 
 }
-
-/* شريط البيانات الافتراضي */
-.contact-bar { display: flex; gap: 30px; border-top: 1px solid var(--line); padding-top: 15px; flex-wrap: wrap; }
-.info-box strong { display: block; font-size: 0.7rem; letter-spacing: 1px; color: #000; text-transform: uppercase; }
-.info-box span { font-size: 0.85rem; color: var(--gray); }
+.info-box strong { display: block; font-size: 0.7rem; color: #000; text-transform: uppercase; }
+.info-box span { font-size: 0.9rem; color: var(--gray); }
 
 /* --- Layout Grid --- */
 .main-row { display: flex; margin-bottom: 30px; }
-.side-label { flex: 0 0 160px; }
-.side-label h2 { font-size: 1.1rem; margin: 0; letter-spacing: 2px; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 2px; }
-.side-label p { font-size: 0.75rem; color: var(--gray); margin-top: 5px; }
-.main-content { flex: 1; padding-left: 30px; border-left: 1px solid var(--line); }
+.side-label { flex: 0 0 180px; }
+.side-label h2 { font-size: 1.1rem; letter-spacing: 2px; color: var(--dark); }
+.side-label p { font-size: 0.75rem; color: var(--gray); }
+.main-content { flex: 1; padding-left: 40px; border-left: 1px solid var(--line); }
 
-/* --- Portfolio & Certs --- */
+/* --- Portfolio Grid --- */
 .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
-.cert-item { background: #fff; padding: 20px; text-align: center; border-radius: 8px; border: 1px solid #eee; border-bottom: 3px solid var(--gold); transition: 0.3s; }
-.cert-item:hover { transform: translateY(-5px); }
-.cert-logo { width: 50px; height: auto; margin-bottom: 15px; }
+.cert-item { 
+    background: #fff; padding: 20px; text-align: center; 
+    border: 1px solid #eee; border-bottom: 3px solid var(--gold); 
+}
+.cert-logo { width: 50px; margin-bottom: 10px; }
 
-/* ====================================================== */
-/* التنسيق الخاص بالجوال والتابلت - Mobile & Tablet */
-/* ====================================================== */
+/* الأزرار */
+.cert-mini-btn, .mini-download-btn, .download-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--gold); color: #000; padding: 8px 15px;
+    text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 0.8rem;
+}
+
+/* --- Responsive (الجوال والتابلت) --- */
 @media (max-width: 768px) {
-    .resume-wrapper { padding: 25px 15px !important; margin: 10px !important; }
-
-    /* الهيدر */
-    .main-header { flex-direction: column !important; text-align: center !important; margin-bottom: 20px !important; }
-    .profile-circle { margin-right: 0 !important; margin-bottom: 15px !important; width: 90px !important; height: 90px !important; }
-
-    /* البيانات الشخصية: بجانب بعضها كما في الصورة */
+    .resume-wrapper { padding: 25px 15px; margin: 10px; }
+    .main-header { flex-direction: column; text-align: center; }
+    .profile-circle { margin-right: 0; margin-bottom: 15px; width: 100px; height: 100px; }
+    
+    /* إصلاح شريط البيانات الشخصية كما طلبت */
     .contact-bar { 
         display: flex !important;
         flex-direction: row !important;
         flex-wrap: wrap !important;
         justify-content: flex-start !important;
         gap: 15px 20px !important;
-        padding-top: 15px !important;
     }
+    .info-box { flex: 0 1 auto; min-width: 100px; }
+    .info-box strong { font-size: 0.6rem !important; margin-bottom: 2px; }
+    .info-box span { font-size: 0.8rem !important; }
 
-    .info-box { flex: 0 1 auto !important; min-width: 110px !important; text-align: left !important; }
-    .info-box strong { 
-        font-size: 0.6rem !important; 
-        font-weight: 800 !important; 
-        margin-bottom: 1px !important; 
-        color: #000 !important;
-    }
-    .info-box span { font-size: 0.8rem !important; display: block !important; }
-
-    /* حل مشكلة المساحات الكبيرة */
-    .main-row { flex-direction: column !important; margin-bottom: 20px !important; }
-    .side-label { width: 100% !important; margin-bottom: 5px !important; }
-    .side-label h2 { font-size: 1rem !important; }
-    .side-label p { margin-top: 0 !important; margin-bottom: 10px !important; }
-    .main-content { padding-left: 0 !important; border-left: none !important; }
-
-    /* الشهادات: 2 بجانب بعض */
-    .cert-grid { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
-    .cert-item { padding: 10px !important; }
+    /* إصلاح الأقسام والمساحات */
+    .main-row { flex-direction: column; margin-bottom: 20px; }
+    .side-label { width: 100%; border-bottom: 2px solid var(--gold); margin-bottom: 10px; padding-bottom: 5px; }
+    .main-content { padding-left: 0; border-left: none; }
+    
+    .cert-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
 }
