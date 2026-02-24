@@ -153,37 +153,70 @@ body {
 .whatsapp { background: #25D366; }
 
 
+/* ========================================== */
+/* منطقة تنسيق الجوال والتابلت فقط - لا تغير شيئاً فوقها */
+/* ========================================== */
 @media (max-width: 768px) {
-    /* الحفاظ على توزيع البيانات الشخصية بجانب بعضها */
-    .contact-bar { 
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important; /* تقسيم السطر لقسمين متساويين */
-        gap: 15px 10px !important;
-        text-align: left !important;
-        border-top: 1px solid var(--line) !important;
-        padding-top: 15px !important;
+    /* 1. الحاوية الكلية */
+    .resume-wrapper { 
+        padding: 30px 20px !important; 
+        margin: 10px !important;
+        max-width: 95% !important;
     }
 
-    .info-box strong {
-        font-size: 0.7rem !important; /* تصغير طفيف للعناوين */
-        letter-spacing: 0.5px !important;
-    }
-
-    .info-box span {
-        font-size: 0.85rem !important; /* حجم النص المناسب للجوال */
-        color: var(--gray) !important;
-        display: block !important;
-    }
-
-    /* إصلاح الهيدر ليتناسب مع هذا التوزيع */
+    /* 2. الهيدر (الصورة والاسم) */
     .main-header {
         flex-direction: column !important;
         text-align: center !important;
+        margin-bottom: 30px !important;
     }
 
     .profile-circle {
         margin-right: 0 !important;
         margin-bottom: 20px !important;
+        width: 100px !important; /* تصغير الدائرة قليلاً للجوال */
+        height: 100px !important;
+    }
+
+    .name { font-size: 2rem !important; } /* تصغير الخط ليتناسب مع شاشة الجوال */
+
+    /* 3. البيانات الشخصية (التنسيق الذي طلبته - 2 في كل سطر) */
+    .contact-bar { 
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important; 
+        gap: 15px 10px !important;
+        text-align: left !important;
+        border-top: 1px solid var(--line) !important;
+        padding-top: 20px !important;
+    }
+
+    /* 4. تحويل الأقسام (Intro, Portfolio, Experience) لتصبح تحت بعضها */
+    .main-row { 
+        flex-direction: column !important; 
+        margin-bottom: 30px !important;
+    }
+
+    .side-label { 
+        width: 100% !important; 
+        margin-bottom: 10px !important;
+        border-bottom: 2px solid var(--gold); /* خط ذهبي تحت اسم القسم في الجوال */
+        padding-bottom: 5px;
+    }
+
+    .main-content { 
+        padding-left: 0 !important; 
+        border-left: none !important; /* إلغاء الخط الجانبي في الجوال لزيادة المساحة */
+    }
+
+    /* 5. تنسيق الشبكة (Certificates) لتصبح 2 بجانب بعض أو 1 حسب الشاشة */
+    .cert-grid {
+        grid-template-columns: 1fr 1fr !important; 
+        gap: 10px !important;
+    }
+
+    /* 6. إظهار شريط الاتصال السريع في الأسفل */
+    .quick-contact-bar { 
+        display: grid !important; 
     }
 }
 
@@ -224,3 +257,4 @@ body {
     .main-content { padding-left: 0; border-left: none; }
     .quick-contact-bar { display: grid; }
 } */
+
