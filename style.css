@@ -11,8 +11,8 @@
 body { 
     font-family: 'Segoe UI', Arial, sans-serif; 
     background: #ddd; 
-    padding: 50px 0; 
-    line-height: 1.6; 
+    padding: 30px 0; 
+    line-height: 1.5; 
     color: var(--dark); 
 }
 
@@ -20,22 +20,22 @@ body {
     max-width: 950px; 
     margin: auto; 
     background: white; 
-    padding: 60px; 
-    min-height: 1000px; 
+    padding: 40px 60px; 
+    min-height: auto; 
     box-shadow: 0 0 20px rgba(0,0,0,0.1); 
 }
 
 /* --- Header --- */
-.main-header { display: flex; align-items: center; margin-bottom: 70px; }
+.main-header { display: flex; align-items: center; margin-bottom: 40px; }
 .profile-circle { 
-    width: 130px; height: 130px; 
+    width: 120px; height: 120px; 
     background: var(--dark); border-radius: 50%; 
     color: white; display: flex; align-items: center; justify-content: center; 
-    font-size: 2.5rem; margin-right: 40px; 
+    font-size: 2.2rem; margin-right: 40px; 
 }
-.name { font-size: 2.8rem; margin: 0; letter-spacing: 2px; }
+.name { font-size: 2.5rem; margin: 0; letter-spacing: 1px; }
 .highlight { color: var(--gold); }
-.role { font-size: 1.1rem; color: var(--gray); margin: 5px 0 15px 0; }
+.role { font-size: 1rem; color: var(--gray); margin: 5px 0 15px 0; }
 
 .download-btn {
     display: inline-flex; align-items: center; gap: 10px;
@@ -44,168 +44,63 @@ body {
     text-decoration: none; border-radius: 30px;
     font-weight: bold; font-size: 0.9rem;
     transition: all 0.3s ease; border: 2px solid var(--gold);
-    cursor: pointer;
 }
-.download-btn:hover { background-color: transparent; color: var(--gold) !important; transform: translateY(-3px); }
 
-.contact-bar { display: flex; gap: 40px; border-top: 1px solid var(--line); padding-top: 15px; }
-.info-box strong { display: block; font-size: 0.75rem; letter-spacing: 1px; }
-.info-box span { font-size: 0.9rem; color: var(--gray); }
+/* شريط البيانات الافتراضي */
+.contact-bar { display: flex; gap: 30px; border-top: 1px solid var(--line); padding-top: 15px; flex-wrap: wrap; }
+.info-box strong { display: block; font-size: 0.7rem; letter-spacing: 1px; color: #000; text-transform: uppercase; }
+.info-box span { font-size: 0.85rem; color: var(--gray); }
 
 /* --- Layout Grid --- */
-.main-row { display: flex; margin-bottom: 40px; }
-.side-label { flex: 0 0 180px; }
-.side-label h2 { font-size: 1.1rem; margin: 0; letter-spacing: 2px; }
-.side-label p { font-size: 0.75rem; color: var(--gray); }
-.main-content { flex: 1; padding-left: 40px; border-left: 1px solid var(--line); }
+.main-row { display: flex; margin-bottom: 30px; }
+.side-label { flex: 0 0 160px; }
+.side-label h2 { font-size: 1.1rem; margin: 0; letter-spacing: 2px; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 2px; }
+.side-label p { font-size: 0.75rem; color: var(--gray); margin-top: 5px; }
+.main-content { flex: 1; padding-left: 30px; border-left: 1px solid var(--line); }
 
-/* --- Portfolio & Documents Cards --- */
-.cert-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
-}
+/* --- Portfolio & Certs --- */
+.cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
+.cert-item { background: #fff; padding: 20px; text-align: center; border-radius: 8px; border: 1px solid #eee; border-bottom: 3px solid var(--gold); transition: 0.3s; }
+.cert-item:hover { transform: translateY(-5px); }
+.cert-logo { width: 50px; height: auto; margin-bottom: 15px; }
 
-.cert-item {
-    background: #fff !important;
-    padding: 20px;
-    text-align: center;
-    border-radius: 8px;
-    border: 1px solid #eee;
-    border-bottom: 3px solid var(--gold);
-    transition: 0.3s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: var(--dark) !important;
-}
-
-.cert-item:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-.cert-logo { width: 60px; height: auto; margin-bottom: 15px; transition: 0.3s; }
-.cert-item span { font-size: 0.85rem; font-weight: bold; min-height: 40px; display: block; margin-bottom: 10px; }
-
-/* --- الأزرار المدمجة والذكية --- */
-.cert-mini-btn, .mini-download-btn {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 8px !important;
-    margin-top: auto !important;
-    padding: 10px 15px !important;
-    background-color: #222 !important;
-    color: #ffffff !important;
-    text-decoration: none !important;
-    font-size: 0.75rem !important;
-    font-weight: bold !important;
-    border-radius: 4px !important;
-    width: 100% !important;
-    transition: all 0.3s ease !important;
-    border: 1px solid #222 !important;
-}
-
-.cert-mini-btn[href="#"] i::before, 
-.mini-download-btn[href="#"] i::before {
-    content: "\f023";
-    color: var(--gold) !important;
-}
-
-.cert-mini-btn:not([href="#"]), 
-.mini-download-btn:not([href="#"]) {
-    border-color: var(--gold) !important;
-    cursor: pointer !important;
-}
-
-.cert-mini-btn:not([href="#"]) i::before, 
-.mini-download-btn:not([href="#"]) i::before {
-    content: "\f06e";
-    color: var(--gold) !important;
-}
-
-.cert-mini-btn:hover, .mini-download-btn:hover {
-    background-color: var(--gold) !important;
-    color: #000000 !important;
-    border-color: var(--gold) !important;
-}
-
-.cert-mini-btn:hover i, .mini-download-btn:hover i { color: #000000 !important; }
-
-/* --- العناصر الإضافية --- */
-.cover-letter-card { background: #fdfdfd; border-left: 4px solid var(--gold); padding: 20px; margin-bottom: 25px; border-radius: 0 8px 8px 0; }
-.read-more-trigger { color: var(--gold); cursor: pointer; font-weight: bold; text-decoration: underline; }
-.skills-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9rem; }
-.skills-table th { text-align: left; background: #f8f8f8; padding: 10px; border-bottom: 2px solid var(--gold); }
-.skills-table td { padding: 12px 10px; border-bottom: 1px solid var(--line); }
-
-.modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 10000; justify-content: center; align-items: center; backdrop-filter: blur(5px); }
-.modal-content { background: #1a1a1a; padding: 40px; border-radius: 20px; border: 2px solid var(--gold); text-align: center; max-width: 450px; color: white; }
-.modal-icon { font-size: 3.5rem; color: var(--gold); margin-bottom: 20px; }
-.modal-close-btn { background: var(--gold); color: #000; border: none; padding: 12px 35px; border-radius: 30px; font-weight: bold; margin-top: 25px; cursor: pointer; }
-
-.quick-contact-bar { position: fixed; bottom: 0; left: 0; width: 100%; display: none; grid-template-columns: 1fr 1fr; z-index: 999; }
-.q-btn { padding: 15px; text-align: center; color: white; text-decoration: none; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px; }
-.call { background: var(--dark); }
-.whatsapp { background: #25D366; }
-
+/* ====================================================== */
+/* التنسيق الخاص بالجوال والتابلت - Mobile & Tablet */
+/* ====================================================== */
 @media (max-width: 768px) {
-    /* حاوية البيانات الشخصية: تظهر بجانب بعضها (نظام شبكة مرن) */
+    .resume-wrapper { padding: 25px 15px !important; margin: 10px !important; }
+
+    /* الهيدر */
+    .main-header { flex-direction: column !important; text-align: center !important; margin-bottom: 20px !important; }
+    .profile-circle { margin-right: 0 !important; margin-bottom: 15px !important; width: 90px !important; height: 90px !important; }
+
+    /* البيانات الشخصية: بجانب بعضها كما في الصورة */
     .contact-bar { 
         display: flex !important;
-        flex-direction: row !important; 
-        flex-wrap: wrap !important;    /* يسمح بالعناصر بالانتقال لسطر جديد في الشاشات الصغيرة جداً */
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
         justify-content: flex-start !important;
-        gap: 15px 25px !important;     /* مسافة عرضية كافية بين المعلومات */
-        text-align: left !important;
-        border-top: 1px solid var(--line) !important;
+        gap: 15px 20px !important;
         padding-top: 15px !important;
-        margin-bottom: 20px !important;
     }
 
-    /* كل معلومة (العنوان وتحته النص) */
-    .info-box {
-        flex: 0 1 auto !important; 
-        min-width: 100px; /* ضمان مساحة كافية لكل معلومة */
+    .info-box { flex: 0 1 auto !important; min-width: 110px !important; text-align: left !important; }
+    .info-box strong { 
+        font-size: 0.6rem !important; 
+        font-weight: 800 !important; 
+        margin-bottom: 1px !important; 
+        color: #000 !important;
     }
+    .info-box span { font-size: 0.8rem !important; display: block !important; }
 
-    /* العناوين: LOCATION, NATIONALITY, PHONE, EMAIL */
-    .info-box strong {
-        font-size: 0.65rem !important; /* خط صغير جداً وعريض مثل الصورة */
-        font-weight: 800 !important;
-        text-transform: uppercase !important; /* حروف كبيرة */
-        letter-spacing: 1px !important;
-        color: #000 !important; /* أسود صريح للعنوان */
-        display: block !important;
-        margin-bottom: 3px !important; /* مسافة بسيطة جداً تحت العنوان */
-    }
+    /* حل مشكلة المساحات الكبيرة */
+    .main-row { flex-direction: column !important; margin-bottom: 20px !important; }
+    .side-label { width: 100% !important; margin-bottom: 5px !important; }
+    .side-label h2 { font-size: 1rem !important; }
+    .side-label p { margin-top: 0 !important; margin-bottom: 10px !important; }
+    .main-content { padding-left: 0 !important; border-left: none !important; }
 
-    /* البيانات: Saudi Arabia, Palestine, إلخ */
-    .info-box span {
-        font-size: 0.85rem !important; /* خط البيانات أوضح قليلاً */
-        color: var(--gray) !important;
-        white-space: nowrap !important; /* يمنع انقسام الكلمة الواحدة */
-        display: block !important;
-    }
-
-    /* تحسين شكل الهيدر في الجوال والتابلت */
-    .main-header {
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-        margin-bottom: 20px !important;
-    }
-
-    .profile-circle {
-        margin-right: 0 !important;
-        margin-bottom: 15px !important;
-        width: 100px !important;
-        height: 100px !important;
-    }
-
-    /* تقليص المساحات في باقي الأقسام ليكون التصميم "ملموماً" */
-    .main-row { margin-bottom: 15px !important; }
-    .side-label h2 { font-size: 1rem !important; margin-bottom: 2px !important; }
-    .side-label p { font-size: 0.7rem !important; margin-bottom: 5px !important; }
-    
-    /* الخط الأصفر: تقريب المسافات */
-    hr, .gold-line { margin: 5px 0 10px 0 !important; }
+    /* الشهادات: 2 بجانب بعض */
+    .cert-grid { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+    .cert-item { padding: 10px !important; }
 }
-
