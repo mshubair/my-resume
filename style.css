@@ -146,63 +146,66 @@ body {
 .call { background: var(--dark); }
 .whatsapp { background: #25D366; }
 
-/* ====================================================== */
-/* التعديل النهائي للجوال: يجمع بين التصميم القديم والثبات */
-/* ====================================================== */
 @media (max-width: 768px) {
-    
-    .resume-wrapper {
-        padding: 30px 15px !important; 
-        width: auto !important;
-        margin: 10px !important;
+    /* حاوية البيانات الشخصية: تظهر بجانب بعضها (نظام شبكة مرن) */
+    .contact-bar { 
+        display: flex !important;
+        flex-direction: row !important; 
+        flex-wrap: wrap !important;    /* يسمح بالعناصر بالانتقال لسطر جديد في الشاشات الصغيرة جداً */
+        justify-content: flex-start !important;
+        gap: 15px 25px !important;     /* مسافة عرضية كافية بين المعلومات */
+        text-align: left !important;
+        border-top: 1px solid var(--line) !important;
+        padding-top: 15px !important;
+        margin-bottom: 20px !important;
     }
 
-    /* هيدر الجوال */
+    /* كل معلومة (العنوان وتحته النص) */
+    .info-box {
+        flex: 0 1 auto !important; 
+        min-width: 100px; /* ضمان مساحة كافية لكل معلومة */
+    }
+
+    /* العناوين: LOCATION, NATIONALITY, PHONE, EMAIL */
+    .info-box strong {
+        font-size: 0.65rem !important; /* خط صغير جداً وعريض مثل الصورة */
+        font-weight: 800 !important;
+        text-transform: uppercase !important; /* حروف كبيرة */
+        letter-spacing: 1px !important;
+        color: #000 !important; /* أسود صريح للعنوان */
+        display: block !important;
+        margin-bottom: 3px !important; /* مسافة بسيطة جداً تحت العنوان */
+    }
+
+    /* البيانات: Saudi Arabia, Palestine, إلخ */
+    .info-box span {
+        font-size: 0.85rem !important; /* خط البيانات أوضح قليلاً */
+        color: var(--gray) !important;
+        white-space: nowrap !important; /* يمنع انقسام الكلمة الواحدة */
+        display: block !important;
+    }
+
+    /* تحسين شكل الهيدر في الجوال والتابلت */
     .main-header {
         flex-direction: column !important;
+        align-items: center !important;
         text-align: center !important;
+        margin-bottom: 20px !important;
     }
 
     .profile-circle {
         margin-right: 0 !important;
-        margin-bottom: 20px !important;
+        margin-bottom: 15px !important;
+        width: 100px !important;
+        height: 100px !important;
     }
 
-    /* بيانات الاتصال: 2 بجانب بعض */
-    .contact-bar { 
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important; 
-        gap: 15px 10px !important;
-        text-align: left !important;
-        border-top: 1px solid var(--line) !important;
-        padding-top: 15px !important;
-    }
-
-    .info-box strong { font-size: 0.7rem !important; letter-spacing: 0.5px !important; }
-    .info-box span { font-size: 0.85rem !important; color: var(--gray) !important; display: block !important; }
-
-    /* شبكة الشهادات: 2 بجانب بعض (مثل التصميم القديم) */
-    .cert-grid {
-        grid-template-columns: 1fr 1fr !important; 
-        gap: 10px !important;
-    }
-
-    .cert-item { padding: 15px 10px !important; }
-    .cert-item span { font-size: 0.75rem !important; min-height: 35px !important; }
-
-    /* الأقسام الرئيسية */
-    .main-row { flex-direction: column !important; }
-    .side-label { 
-        width: 100% !important; 
-        border-bottom: 2px solid var(--gold) !important; 
-        margin-bottom: 15px !important; 
-        padding-bottom: 5px !important; 
-    }
-    .main-content { padding-left: 0 !important; border-left: none !important; }
-
-    .quick-contact-bar { display: grid !important; }
+    /* تقليص المساحات في باقي الأقسام ليكون التصميم "ملموماً" */
+    .main-row { margin-bottom: 15px !important; }
+    .side-label h2 { font-size: 1rem !important; margin-bottom: 2px !important; }
+    .side-label p { font-size: 0.7rem !important; margin-bottom: 5px !important; }
+    
+    /* الخط الأصفر: تقريب المسافات */
+    hr, .gold-line { margin: 5px 0 10px 0 !important; }
 }
 
-@media (max-width: 400px) {
-    .cert-grid, .contact-bar { grid-template-columns: 1fr !important; }
-}
