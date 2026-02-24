@@ -153,68 +153,103 @@ body {
 .whatsapp { background: #25D366; }
 
 
-/* ========================================== */
-/* منطقة تنسيق الجوال والتابلت فقط - لا تغير شيئاً فوقها */
-/* ========================================== */
+/* ====================================================== */
+/* التنسيق النهائي الاحترافي للجوال والتابلت (كل الشاشات الصغيرة) */
+/* ====================================================== */
 @media (max-width: 768px) {
-    /* 1. الحاوية الكلية */
-    .resume-wrapper { 
-        padding: 30px 20px !important; 
-        margin: 10px !important;
-        max-width: 95% !important;
+    /* 1. ضبط الخلفية لتكون رمادية خفيفة جداً لتعطي عمقاً للموقع */
+    body { 
+        background: #f0f2f5 !important; 
+        padding: 10px 0 !important; /* مسافة بسيطة جداً من الأعلى والأسفل */
+        margin: 0 !important;
     }
 
-    /* 2. الهيدر (الصورة والاسم) */
+    /* 2. تحويل الورقة إلى بطاقة (Card) فخمة بظل ناعم غير مزعج */
+    .resume-wrapper { 
+        max-width: 95% !important;     /* توازن بين ملء الشاشة وإظهار الظل */
+        margin: 0 auto !important;      /* توسيط الورقة في التابلت والجوال */
+        padding: 25px 15px !important; 
+        border-radius: 12px !important; /* زوايا منحنية تعطي طابعاً عصرياً */
+        
+        /* ظل احترافي (Soft Shadow): خفيف جداً، غير عريض، ولا يظهر كإطار رمادي */
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05) !important; 
+        
+        border: none !important;
+        min-height: auto !important; /* إلغاء الارتفاع الكبير في الجوال */
+    }
+
+    /* 3. الهيدر: تصغير المسافات لمنع التشتت */
     .main-header {
         flex-direction: column !important;
         text-align: center !important;
-        margin-bottom: 30px !important;
+        margin-bottom: 25px !important;
     }
 
     .profile-circle {
         margin-right: 0 !important;
-        margin-bottom: 20px !important;
-        width: 100px !important; /* تصغير الدائرة قليلاً للجوال */
-        height: 100px !important;
+        margin-bottom: 15px !important;
+        width: 90px !important;
+        height: 90px !important;
+        font-size: 2rem !important;
     }
 
-    .name { font-size: 2rem !important; } /* تصغير الخط ليتناسب مع شاشة الجوال */
+    .name { font-size: 1.8rem !important; letter-spacing: 1px !important; }
 
-    /* 3. البيانات الشخصية (التنسيق الذي طلبته - 2 في كل سطر) */
+    /* 4. البيانات الشخصية: التنسيق العرضي (أهم نقطة طلبتها) */
     .contact-bar { 
         display: grid !important;
-        grid-template-columns: 1fr 1fr !important; 
+        grid-template-columns: 1fr 1fr !important; /* تقسيم السطر لقسمين متساويين */
         gap: 15px 10px !important;
         text-align: left !important;
         border-top: 1px solid var(--line) !important;
-        padding-top: 20px !important;
+        padding-top: 15px !important;
+        margin-top: 15px !important;
     }
 
-    /* 4. تحويل الأقسام (Intro, Portfolio, Experience) لتصبح تحت بعضها */
+    .info-box strong {
+        font-size: 0.65rem !important;
+        font-weight: 800 !important;
+        color: #000 !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    .info-box span {
+        font-size: 0.8rem !important;
+        color: var(--gray) !important;
+    }
+
+    /* 5. معالجة الأقسام والمساحات (INTRO, EXPERIENCE...) */
     .main-row { 
         flex-direction: column !important; 
-        margin-bottom: 30px !important;
+        margin-bottom: 20px !important; 
     }
 
     .side-label { 
         width: 100% !important; 
-        margin-bottom: 10px !important;
-        border-bottom: 2px solid var(--gold); /* خط ذهبي تحت اسم القسم في الجوال */
-        padding-bottom: 5px;
+        margin-bottom: 8px !important;
+        border-bottom: 2px solid var(--gold);
+        padding-bottom: 3px;
     }
+
+    .side-label h2 { font-size: 1rem !important; }
+    .side-label p { display: none; } /* إخفاء الوصف الفرعي في الجوال لتوفير مساحة */
 
     .main-content { 
         padding-left: 0 !important; 
-        border-left: none !important; /* إلغاء الخط الجانبي في الجوال لزيادة المساحة */
+        border-left: none !important;
     }
 
-    /* 5. تنسيق الشبكة (Certificates) لتصبح 2 بجانب بعض أو 1 حسب الشاشة */
+    /* 6. الشهادات والوثائق: 2 في كل سطر بشكل منظم */
     .cert-grid {
         grid-template-columns: 1fr 1fr !important; 
         gap: 10px !important;
     }
+    
+    .cert-item { padding: 15px 10px !important; }
+    .cert-logo { width: 45px !important; }
+    .cert-item span { font-size: 0.75rem !important; min-height: 35px !important; }
 
-    /* 6. إظهار شريط الاتصال السريع في الأسفل */
+    /* 7. إظهار شريط الاتصال السريع في الأسفل */
     .quick-contact-bar { 
         display: grid !important; 
     }
@@ -257,4 +292,5 @@ body {
     .main-content { padding-left: 0; border-left: none; }
     .quick-contact-bar { display: grid; }
 } */
+
 
